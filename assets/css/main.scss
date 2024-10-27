@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$baseFontSize: 16px;
+
+html {
+  font-size: $baseFontSize;
+  overflow-x: visible;
+}
+
+html,
+body,
+#__nuxt {
+  @apply h-full w-full m-0 p-0;
+
+  // text-rendering: optimizeLegibility;
+  // font-synthesis: none;
+  // font-weight: 500;
+}
