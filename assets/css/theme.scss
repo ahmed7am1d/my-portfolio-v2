@@ -1,9 +1,16 @@
 :root {
+    // Theme
+    --primary-theme: #F46C38;
+    --secondary-theme: #C5FF41;
+
     // Background
-    --background-color: #FFFFFF;
+    --background-color: #F0F0F0;
     --background-color-dark: #151312;
 
     // Navbar background
-    --background-nav-light: rgb(255 255 255 / 0.03);
+    --background-nav-light: #FFFFFF;
     --background-nav-dark: rgb(255 255 255 / 0.03);
+
+    --bacground-nav-tooltip-item-light: #151312;
+    --bacground-nav-tooltip-item-dark: rgb(255 255 255 / 0.1);
 }

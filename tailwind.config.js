@@ -12,6 +12,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Theme
+        primary: "var(--primary-theme)",
+        secondary: "var(--secondary-theme)",
+
         // Background
         "theme-light": "var(--background-color)",
         "theme-dark": "var(--background-color-dark)",
@@ -19,6 +23,8 @@ module.exports = {
         // Navbar
         "nav-light": "var(--background-nav-light)",
         "nav-dark": "var(--background-nav-dark)",
+        "nav-item-tooltip-light": "var(--bacground-nav-tooltip-item-light)",
+        "nav-item-tooltip-dark": "var(--bacground-nav-tooltip-item-dark)",
       },
     },
   },
