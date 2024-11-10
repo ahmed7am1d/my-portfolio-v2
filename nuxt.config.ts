@@ -22,4 +22,14 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+
+  vite:{
+    css:{
+      preprocessorOptions:{
+        scss:{
+          api: 'modern-compiler'
+        }
+      }
+    }
+  }
 });

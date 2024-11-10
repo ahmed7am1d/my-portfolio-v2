@@ -25,6 +25,10 @@ module.exports = {
         "nav-dark": "var(--background-nav-dark)",
         "nav-item-tooltip-light": "var(--bacground-nav-tooltip-item-light)",
         "nav-item-tooltip-dark": "var(--bacground-nav-tooltip-item-dark)",
+
+        // Colors
+        "soft-gray": "var(--soft-gray)",
+        "gray": "var(--gray)"
       },
     },
   },
