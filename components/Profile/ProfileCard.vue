@@ -1,5 +1,27 @@
 <script setup lang="ts">
+// Layout
+const socialmediaNavItems = computed(() => [
+    // LinkedIn
+    {
+        id: 1,
+        iconPath: 'linkedin',
+        to: '',
+    },
 
+    // Github
+    {
+        id: 2,
+        iconPath: 'github',
+        to: '',
+    },
+
+    // Instagram
+    {
+        id: 3,
+        iconPath: 'instagram',
+        to: '',
+    },
+])
 </script>
 
 <template>
@@ -23,26 +45,27 @@
                     and try new things.
                 </p>
 
-                <div class="flex justify-center">
-                    <div>👍</div>
-                    <div>👍</div>
-                    <div>👍</div>
-                    <div>👍</div>
-                </div>
+                <ul>
+                    <li v-for="navItem in socialmediaNavItems" :key="navItem.id">
+                        <NuxtLink :to="navItem.to">
+                            <nuxt-icon :name="navItem.iconPath" filled :aria-hidden="true" />
+                        </NuxtLink>
+                    </li>
+                </ul>
             </div>
         </div>
     </article>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .profile-card {
-    @apply h-[640px] w-full bg-white rounded-xl flex flex-col justify-start items-center py-6 px-7 text-center;
+    @apply h-[600px] w-full bg-white rounded-xl flex flex-col justify-start items-center py-6 px-7 text-center;
 
     .profile-image {
         @apply h-[284px] w-[240px] flex justify-center;
 
         img {
-            @apply rounded-xl
+            @apply rounded-xl;
         }
     }
 
@@ -57,9 +80,26 @@
         }
 
         &__description-icon {
-            @apply flex flex-col gap-y-4 max-w-80
+            @apply flex flex-col gap-y-7 max-w-80;
+
+            // Description
+            p {
+                @apply text-dark-gray font-medium;
+            }
+
+            // Icons wrapper (navigation)
+            ul {
+                @apply flex justify-center gap-x-4;
+
+                li {
+                    @apply hover:cursor-pointer;
+
+                    .nuxt-icon svg {
+                        @apply text-primary w-5 h-5;
+                    }
+                }
+            }
         }
     }
-
 }
 </style>

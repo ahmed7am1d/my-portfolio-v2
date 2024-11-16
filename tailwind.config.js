@@ -27,8 +27,9 @@ module.exports = {
         "nav-item-tooltip-dark": "var(--bacground-nav-tooltip-item-dark)",
 
         // Colors
+        "gray": "var(--gray)",
         "soft-gray": "var(--soft-gray)",
-        "gray": "var(--gray)"
+        "dark-gray": "var(--dark-gray)",
       },
     },
   },

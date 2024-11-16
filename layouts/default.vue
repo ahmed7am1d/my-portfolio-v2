@@ -45,7 +45,7 @@
         }
 
         section {
-          @apply col-span-7 xl:col-span-8
+          @apply col-span-7
         }
       }
     }
