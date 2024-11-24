@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const colorMode = useColorMode()
+</script>
+
 <template>
   <div class="app-layout">
     <!-- Header/Navbar -->
@@ -18,6 +22,17 @@
           <section>
             <slot />
           </section>
+
+          <!-- Dark mode (just testing) -->
+          <div class="col-span-5">
+            <h1 class="dark:text-white">Color mode: {{ $colorMode.value }} (bad design I know 😁)</h1>
+            <select v-model="$colorMode.preference">
+              <option value="system">System</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+              <option value="sepia">Sepia</option>
+            </select>
+          </div>
         </div>
       </div>
     </main>

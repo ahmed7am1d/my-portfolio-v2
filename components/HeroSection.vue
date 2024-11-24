@@ -7,8 +7,8 @@
         <!-- Info -->
         <div class="hero-info">
             <h1 class="hero-info__heading">
-                <span class="text-white">SOFTWARE</span>
-                <span class="text-soft-gray">ENGINEER</span>
+                <span class="dark:text-white text-gray">SOFTWARE</span>
+                <span class="dark:text-soft-gray text-black">ENGINEER</span>
             </h1>
 
             <p class="hero-info__about">
