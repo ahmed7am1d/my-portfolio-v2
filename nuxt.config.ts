@@ -4,17 +4,26 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/color-mode",
-    'nuxt-icons',
+    "nuxt-icons",
     "@nuxt/image",
     "@nuxt/fonts",
+    "@nuxtjs/i18n",
   ],
 
-  colorMode: {
-    classSuffix: '',
-    preference: 'system',
-    fallback: 'dark'
+  // i18n
+  i18n: {
+    vueI18n: './localization/i18n.config.ts'
   },
-  css: ["~/assets/css/main.scss", "~/assets/css/theme.scss" ],
+
+  // Dark/Light
+  colorMode: {
+    classSuffix: "",
+    preference: "system",
+    fallback: "dark",
+  },
+
+  // CSS
+  css: ["~/assets/css/main.scss", "~/assets/css/theme.scss"],
 
   postcss: {
     plugins: {
@@ -23,13 +32,14 @@ export default defineNuxtConfig({
     },
   },
 
-  vite:{
-    css:{
-      preprocessorOptions:{
-        scss:{
-          api: 'modern-compiler'
-        }
-      }
-    }
-  }
+  // Vite
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: "modern-compiler",
+        },
+      },
+    },
+  },
 });

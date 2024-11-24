@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
+const { setLocale } = useI18n()
+
 </script>
 
 <template>
@@ -25,7 +27,7 @@ const colorMode = useColorMode()
 
           <!-- Dark mode (just testing) -->
           <div class="col-span-5">
-            <h1 class="dark:text-white">Color mode: {{ $colorMode.value }} (bad design I know 😁)</h1>
+            <h1 class="dark:text-white">Color mode: {{ colorMode.value }} (bad design I know 😁)</h1>
             <select v-model="$colorMode.preference">
               <option value="system">System</option>
               <option value="light">Light</option>
@@ -33,6 +35,17 @@ const colorMode = useColorMode()
               <option value="sepia">Sepia</option>
             </select>
           </div>
+
+          <!-- Locale (just testing) -->
+          <div class="col-span-5 flex flex-col gap-y-2">
+            <h1 class="dark:text-white text-black">Locale:</h1>
+            <div class="flex gap-x-2">
+              <button @click="setLocale('en')" class="dark:bg-white bg-gray p-2">EN </button>
+              <button @click="setLocale('ar')" class="dark:bg-white bg-gray p-2">AR</button>
+            </div>
+            <p class="dark:text-white text-black">{{ $t('welcome') }}</p>
+          </div>
+
         </div>
       </div>
     </main>
