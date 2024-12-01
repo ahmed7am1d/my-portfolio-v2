@@ -1,12 +1,7 @@
+import { messages } from "./messages"
+
 export default defineI18nConfig(() => ({
     legacy: false,
-    locale: 'en',
-    messages: {
-      en: {
-        welcome: 'Welcome'
-      },
-      ar: {
-        welcome: 'مرحبا'
-      }
-    }
+    fallbackFormat: 'en-US',
+    messages
   }))

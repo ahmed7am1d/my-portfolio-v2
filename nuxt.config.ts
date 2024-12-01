@@ -1,3 +1,5 @@
+import { LOCALE_DEFAULT, LOCALES } from "./localization/messages";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
@@ -12,7 +14,9 @@ export default defineNuxtConfig({
 
   // i18n
   i18n: {
-    vueI18n: './localization/i18n.config.ts'
+    vueI18n: './localization/i18n.config.ts',
+    locales: LOCALES,
+    defaultLocale: LOCALE_DEFAULT
   },
 
   // Dark/Light

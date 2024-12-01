@@ -40,8 +40,8 @@ const { setLocale } = useI18n()
           <div class="col-span-5 flex flex-col gap-y-2">
             <h1 class="dark:text-white text-black">Locale:</h1>
             <div class="flex gap-x-2">
-              <button @click="setLocale('en')" class="dark:bg-white bg-gray p-2">EN </button>
-              <button @click="setLocale('ar')" class="dark:bg-white bg-gray p-2">AR</button>
+              <button @click="setLocale('en-US')" class="dark:bg-white bg-gray p-2">EN </button>
+              <button @click="setLocale('ar-IQ')" class="dark:bg-white bg-gray p-2">AR</button>
             </div>
             <p class="dark:text-white text-black">{{ $t('welcome') }}</p>
           </div>
