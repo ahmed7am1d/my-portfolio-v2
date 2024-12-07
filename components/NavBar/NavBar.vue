@@ -6,6 +6,8 @@ const navigationItems = computed(() => [
         id: 'home',
         iconPath: 'home',
         textToDisplay: 'Home',
+        translationKey:'nav.home',
+        translationKeyPosition: 1,
         to: '',
     },
 
@@ -14,6 +16,8 @@ const navigationItems = computed(() => [
         id: 'projects',
         iconPath: 'folder',
         textToDisplay: 'Projects',
+        translationKey: 'nav.project',
+        translationKeyPosition: 2,
         to: '',
     },
 
@@ -22,6 +26,8 @@ const navigationItems = computed(() => [
         id: 'blog',
         iconPath: 'edit',
         textToDisplay: 'Blogs',
+        translationKey: 'nav.blog',
+        translationKeyPosition: 2,
         to: '',
     },
 
@@ -30,6 +36,8 @@ const navigationItems = computed(() => [
         id: 'experience',
         iconPath: 'briefcase',
         textToDisplay: 'Experience',
+        translationKey: 'nav.experience',
+        translationKeyPosition: 1,
         to: '',
     },
 
@@ -38,6 +46,8 @@ const navigationItems = computed(() => [
         id: 'tools',
         iconPath: 'tool',
         textToDisplay: 'Tools',
+        translationKey: 'nav.tool',
+        translationKeyPosition: 2,
         to: '',
     },
 ])
@@ -47,10 +57,10 @@ const navigationItems = computed(() => [
     <nav aria-label="Main navigation">
         <ul role="menubar">
             <li v-for="navItem in navigationItems" :key="navItem.id" role="none">
-                <NuxtLink :to="navItem.to" role="menuitem" :aria-label="navItem.textToDisplay">
+                <NuxtLink :to="navItem.to" role="menuitem" :aria-label="$t(navItem.translationKey)">
                     <nuxt-icon :name="navItem.iconPath" filled :aria-hidden="true" />
 
-                    <span class="nav-item-tooltip" role="tooltip"> {{ navItem.textToDisplay }} </span>
+                    <span class="nav-item-tooltip" role="tooltip"> {{ $t(navItem.translationKey, navItem.translationKeyPosition) }} </span>
                 </NuxtLink>
             </li>
         </ul>

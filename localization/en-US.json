@@ -1,10 +1,20 @@
 {
+  "nav": {
+    "home": "Home | Home",
+    "project": "Project | Projects",
+    "blog": "Blog | Blogs",
+    "experience": "Experience | Experiences",
+    "tool": "Tool | Tools"
+  },
   "heroSection": {
     "heading": {
       "software": "Software",
       "engineer": "Engineer"
     },
-    "bio":"Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products."
+    "bio":"Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.",
+    "stats": {
+
+    }
   },
   "welcome": "Welcome"
 }
