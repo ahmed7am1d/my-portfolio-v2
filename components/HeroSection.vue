@@ -7,13 +7,12 @@
         <!-- Info -->
         <div class="hero-info">
             <h1 class="hero-info__heading">
-                <span class="dark:text-white text-gray">SOFTWARE</span>
-                <span class="dark:text-soft-gray text-black">ENGINEER</span>
+                <span class="dark:text-white text-gray uppercase">{{ $t('heroSection.heading.software') }}</span>
+                <span class="dark:text-soft-gray text-black uppercase">{{ $t('heroSection.heading.engineer') }}</span>
             </h1>
 
             <p class="hero-info__about">
-                Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into
-                beautifully crafted products.
+                {{ $t('heroSection.bio') }}
             </p>
         </div>
 
