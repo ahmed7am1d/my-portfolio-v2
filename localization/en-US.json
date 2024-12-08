@@ -16,5 +16,11 @@
 
     }
   },
+  "experienceSection":{
+    "heading": {
+      "primary": "2 YEARS OF",
+      "secondary": "EXPERIENCE"
+    }
+  },
   "welcome": "Welcome"
 }

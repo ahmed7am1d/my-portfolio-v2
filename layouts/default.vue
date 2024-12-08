@@ -1,4 +1,8 @@
 <script setup lang="ts">
+// Components
+import ProfileCard from '~/components/Card/ProfileCard.vue';
+
+// Utils
 const colorMode = useColorMode()
 const { setLocale } = useI18n()
 

@@ -14,9 +14,9 @@ export default defineNuxtConfig({
 
   // i18n
   i18n: {
-    vueI18n: './localization/i18n.config.ts',
+    vueI18n: "./localization/i18n.config.ts",
     locales: LOCALES,
-    defaultLocale: LOCALE_DEFAULT
+    defaultLocale: LOCALE_DEFAULT,
   },
 
   // Dark/Light
