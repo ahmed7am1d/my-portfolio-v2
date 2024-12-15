@@ -8,8 +8,7 @@ import SectionHeading from '~/components/Heading/SectionHeading.vue';
     <section>
         <!-- Info -->
         <div class="hero-info">
-            <SectionHeading 
-                primary-text-translation-key="heroSection.heading.software"
+            <SectionHeading primary-text-translation-key="heroSection.heading.software"
                 secondary-text-translation-key="heroSection.heading.engineer" />
 
             <p class="hero-info__about">
@@ -19,17 +18,17 @@ import SectionHeading from '~/components/Heading/SectionHeading.vue';
 
         <!-- Stats -->
         <div class="hero-stats">
-            <div>
+            <div class="hero-stats__item">
                 <span>+99</span>
                 <p>YEARS OF EXPEREINCE</p>
             </div>
 
-            <div>
+            <div class="hero-stats__item">
                 <span>+99</span>
                 <p>PROJECTS COMPLETED</p>
             </div>
 
-            <div>
+            <div class="hero-stats__item">
                 <span>+99</span>
                 <p>WORLDWIDE CLIENTS</p>
             </div>
@@ -42,23 +41,31 @@ import SectionHeading from '~/components/Heading/SectionHeading.vue';
 </template>
 
 <style scoped lang="scss">
-.hero-info {
-    @apply flex flex-col gap-y-10;
+section {
+    @apply pt-10 lg:pt-0;
 
-    &__about {
-        @apply max-w-md text-gray;
-    }
-}
+    .hero-info {
+        @apply flex flex-col gap-y-10 items-center lg:items-start text-center lg:text-start;
 
-.hero-stats {
-    @apply flex flex-row gap-x-10 w-full mt-12;
-
-    span {
-        @apply text-black dark:text-white text-7xl font-bold;
+        &__about {
+            @apply max-w-md text-gray text-lg;
+        }
     }
 
-    p {
-        @apply text-gray w-1/2;
+    .hero-stats {
+        @apply flex flex-row gap-x-10 w-full mt-12 justify-center lg:justify-start;
+
+        &__item {
+            @apply flex flex-col items-center lg:items-start;
+        }
+
+        span {
+            @apply text-black dark:text-white text-7xl font-bold;
+        }
+
+        p {
+            @apply text-center lg:text-start text-gray w-full lg:w-1/2;
+        }
     }
 }
 </style>

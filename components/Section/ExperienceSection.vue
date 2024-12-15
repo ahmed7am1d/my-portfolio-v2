@@ -1,6 +1,27 @@
 <script setup lang="ts">
 // Components
 import SectionHeading from '~/components/Heading/SectionHeading.vue';
+import JobCard from '~/components/Card/JobCard.vue';
+
+// Layout
+const jobItems = [
+    {
+        jobTitle: 'Software Engineer',
+        jobDescription: 'Developed and maintained web applications and used DevOps tools to deploy applications on AWS and Azure.',
+        jobDuration: '2019 - 2021',
+    },
+    {
+        jobTitle: 'Software Engineer',
+        jobDescription: 'Developed and maintained web applications and used DevOps tools to deploy applications on AWS and Azure.',
+        jobDuration: '2019 - 2021',
+    },
+    {
+        jobTitle: 'Software Engineer',
+        jobDescription: 'Developed and maintained web applications and used DevOps tools to deploy applications on AWS and Azure.',
+        jobDuration: '2019 - 2021',
+    },
+];
+
 </script>
 
 <template>
@@ -8,29 +29,18 @@ import SectionHeading from '~/components/Heading/SectionHeading.vue';
         <!-- Heading -->
         <SectionHeading primary-text-translation-key="experienceSection.heading.primary"
             secondary-text-translation-key="experienceSection.heading.secondary" />
+
         <!-- Job card -->
-        <div class="job-card">
-            <h3>Backstage technology</h3>
-
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem a adipisci aliquid voluptatibus
-                voluptatum quibusdam facere ullam corrupti! In obcaecati minus eveniet voluptatibus, qui dolores?
-                Officiis commodi sapiente voluptas! Numquam.</p>
-
-            <p>Jan 2020 - Present</p>
-        </div>
+        <JobCard v-for="job in jobItems"
+            :job-title="job.jobTitle"
+            :job-description="job.jobDescription"
+            :job-duration="job.jobDuration"
+        />
     </section>
 </template>
 
 <style scoped lang="scss">
-.job-card {
+section {
     @apply flex flex-col gap-y-5;
-
-    h3 {
-        @apply dark:text-white text-black text-3xl;
-    }
-
-    p {
-        @apply text-gray;
-    }
 }
 </style>

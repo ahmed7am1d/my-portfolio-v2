@@ -63,6 +63,10 @@ const { setLocale } = useI18n()
 .app-layout {
   @apply w-full min-h-full h-full dark:bg-theme-dark bg-theme-light;
 
+  .app-header {
+    @apply sticky top-0;
+  }
+
   .app-main {
     @apply flex-1 w-full;
 
