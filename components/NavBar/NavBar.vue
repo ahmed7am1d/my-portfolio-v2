@@ -1,6 +1,9 @@
 <script setup lang="ts">
+/* __placeholder__ */
+import type { INavigationItem } from './types/navbar.type';
+
 // Layout
-const navigationItems = computed(() => [
+const navigationItems = computed<INavigationItem[]>(() => [
     // Home
     {
         id: 'home',
@@ -11,7 +14,7 @@ const navigationItems = computed(() => [
         to: '',
     },
 
-    // Folder
+    // Projects
     {
         id: 'projects',
         iconPath: 'folder',

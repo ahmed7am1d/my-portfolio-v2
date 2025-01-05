@@ -17,6 +17,6 @@ const props = defineProps<IProps>();
 
 <style scoped lang="scss">
 .section-heading {
-    @apply text-7xl font-bold flex flex-col;
+    @apply text-5xl sm:text-6xl md:text-7xl font-bold flex flex-col items-center lg:items-start text-center lg:text-start;
 }
 </style>

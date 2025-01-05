@@ -45,10 +45,10 @@ section {
     @apply pt-10 lg:pt-0;
 
     .hero-info {
-        @apply flex flex-col gap-y-10 items-center lg:items-start text-center lg:text-start;
+        @apply flex flex-col gap-y-2.5 items-center lg:items-start;
 
         &__about {
-            @apply max-w-md text-gray text-lg;
+            @apply max-w-md text-gray text-lg items-center lg:items-start text-center lg:text-start;
         }
     }
 
@@ -60,7 +60,7 @@ section {
         }
 
         span {
-            @apply text-black dark:text-white text-7xl font-bold;
+            @apply text-black dark:text-white text-5xl sm:text-6xl md:text-7xl font-bold;
         }
 
         p {

@@ -13,7 +13,7 @@ html {
 html,
 body,
 #__nuxt {
-  @apply  w-full m-0 p-0 overflow-y-auto;
+  @apply  w-full m-0 p-0 overflow-y-auto overflow-x-hidden;
 
   // text-rendering: optimizeLegibility;
   // font-synthesis: none;
