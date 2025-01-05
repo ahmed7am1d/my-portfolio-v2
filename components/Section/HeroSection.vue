@@ -32,7 +32,6 @@ import SectionHeading from '~/components/Heading/SectionHeading.vue';
                 <span>+99</span>
                 <p>WORLDWIDE CLIENTS</p>
             </div>
-
         </div>
 
         <!-- Additional info -->

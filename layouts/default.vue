@@ -25,9 +25,9 @@ const { setLocale } = useI18n()
           </aside>
 
           <!-- Dynamic content section -->
-          <section>
+          <article>
             <slot />
-          </section>
+          </article>
 
           <!-- Dark mode (just testing) -->
           <div class="col-span-5">
@@ -49,7 +49,6 @@ const { setLocale } = useI18n()
             </div>
             <p class="dark:text-white text-black">{{ $t('welcome') }}</p>
           </div>
-
         </div>
       </div>
     </main>
@@ -79,8 +78,8 @@ const { setLocale } = useI18n()
         aside {
           @apply col-span-5 xl:col-span-4
         }
-
-        section {
+        
+        article {
           @apply col-span-7
         }
       }

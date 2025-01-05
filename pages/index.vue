@@ -18,5 +18,3 @@ import ExperienceSection from '~/components/Section/ExperienceSection.vue';
         <!-- Contact Form -->
     </div>
 </template>
-
-<style scoped lang="scss"></style>

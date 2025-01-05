@@ -25,7 +25,7 @@ const jobItems = [
 </script>
 
 <template>
-    <section class="flex flex-col gap-y-5">
+    <section>
         <!-- Heading -->
         <SectionHeading primary-text-translation-key="experienceSection.heading.primary"
             secondary-text-translation-key="experienceSection.heading.secondary" />
