@@ -2,6 +2,7 @@
 // Components
 import SectionHeading from '~/components/Heading/SectionHeading.vue';
 
+
 </script>
 
 <template>

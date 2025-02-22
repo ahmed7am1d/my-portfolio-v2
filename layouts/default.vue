@@ -62,25 +62,21 @@ const { setLocale } = useI18n()
 .app-layout {
   @apply w-full min-h-full h-full dark:bg-theme-dark bg-theme-light;
 
-  .app-header {
-    @apply sticky top-0;
-  }
-
   .app-main {
-    @apply flex-1 w-full;
+    @apply flex-1 w-full relative;
 
     .content-container {
       @apply xl:w-10/12 lg:w-5/6 md:w-5/6 sm:w-5/6 w-11/12 mx-auto;
 
       .content-grid {
-        @apply flex flex-col gap-x-20 lg:grid lg:grid-cols-12;
+        @apply flex flex-col gap-x-20 lg:grid lg:grid-cols-12 min-h-screen;
 
         aside {
-          @apply col-span-5 xl:col-span-4
+          @apply col-span-5 xl:col-span-4 sticky top-20 h-fit z-40;
         }
-        
+
         article {
-          @apply col-span-7
+          @apply col-span-7;
         }
       }
     }

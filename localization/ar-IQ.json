@@ -20,5 +20,11 @@
       "secondary": "الخبره"
     }
   },
+  "projectsSection":{
+    "heading": {
+      "primary": "المشاريع",
+      "secondary": "الاخيره"
+    }
+  },
   "welcome": "مرحبا"
 }

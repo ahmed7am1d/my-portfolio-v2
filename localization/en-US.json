@@ -22,5 +22,11 @@
       "secondary": "EXPERIENCE"
     }
   },
+  "projectsSection":{
+    "heading": {
+      "primary": "RECENT",
+      "secondary": "PROJECTS"
+    }
+  },
   "welcome": "Welcome"
 }
