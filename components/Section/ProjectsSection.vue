@@ -8,17 +8,17 @@ const projectItems = [
     {
         imageLocation: '/todo-project.png',
         projectTitle: 'First project',
-        projectDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eaque repudiandae laudantium? Sequi possimus corporis quos dignissimos distinctio velit, omnis consequuntur accusantium, deserunt harum asperiores quo! Fugit debitis necessitatibus nam?',
+        projectDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     },
     {
         imageLocation: '/todo-project.png',
         projectTitle: 'Second project',
-        projectDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eaque repudiandae laudantium? Sequi possimus corporis quos dignissimos distinctio velit, omnis consequuntur accusantium, deserunt harum asperiores quo! Fugit debitis necessitatibus nam?',
+        projectDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     },
     {
         imageLocation: '/todo-project.png',
         projectTitle: 'Third project',
-        projectDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eaque repudiandae laudantium? Sequi possimus corporis quos dignissimos distinctio velit, omnis consequuntur accusantium, deserunt harum asperiores quo! Fugit debitis necessitatibus nam?',
+        projectDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     },
 ]
 
@@ -41,6 +41,6 @@ const projectItems = [
 
 <style scoped lang="scss">
 section {
-    @apply flex flex-col gap-y-5;
+    @apply flex flex-col gap-y-16;
 }
 </style>

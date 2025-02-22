@@ -23,13 +23,13 @@ defineProps<IProp>()
 
 <style scoped lang="scss">
 .project-card {
-    @apply flex flex-row gap-x-5 h-36;
+    @apply flex flex-row items-center gap-x-5 h-36;
 
     &__image-container {
         @apply h-fit w-fit border-primary border;
 
         img {
-            @apply min-h-36 min-w-32 object-cover;
+            @apply min-h-44 max-h-48 min-w-20 max-w-36 object-cover;
         }
     }
 
