@@ -3,6 +3,7 @@
 import HeroSection from '~/components/Section/HeroSection.vue';
 import ExperienceSection from '~/components/Section/ExperienceSection.vue';
 import ProjectsSection from '~/components/Section/ProjectsSection.vue';
+import BlogsSection from '~/components/Section/BlogsSection.vue';
 </script>
 
 <template>
@@ -17,7 +18,10 @@ import ProjectsSection from '~/components/Section/ProjectsSection.vue';
         <ProjectsSection class="pt-32"/>
 
         <!-- Tools I use -->
+
         <!-- Blogs -->
+         <BlogsSection class="pt-32"/>
+
         <!-- Contact Form -->
     </div>
 </template>

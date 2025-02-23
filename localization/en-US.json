@@ -28,5 +28,11 @@
       "secondary": "PROJECTS"
     }
   },
+  "blogsSection": {
+    "heading": {
+      "primary": "RECENT",
+      "secondary": "BLOGS"
+    }
+  },
   "welcome": "Welcome"
 }
