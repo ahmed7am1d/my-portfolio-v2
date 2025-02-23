@@ -24,12 +24,12 @@
     "heading": {
       "primary": "المشاريع",
       "secondary": "الاخيره"
-    },
-    "blogsSection": {
-      "heading": {
-        "primary": "المدونات",
-        "secondary": "الاخيره"
-      }
+    }
+  },
+  "blogsSection": {
+    "heading": {
+      "primary": "المدونات",
+      "secondary": "الاخيره"
     }
   },
   "welcome": "مرحبا"
