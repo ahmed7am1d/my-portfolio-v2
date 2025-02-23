@@ -29,7 +29,7 @@ defineProps<IProp>()
         @apply h-fit w-fit border-primary border;
 
         img {
-            @apply min-h-44 max-h-48 min-w-20 max-w-36 object-cover;
+            @apply min-h-40 max-h-44 min-w-20 max-w-36 object-contain;
         }
     }
 
