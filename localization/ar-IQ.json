@@ -6,13 +6,30 @@
     "experience": "الخبرات | الخبره",
     "tool": "الاداة | الادوات"
   },
+  "profileCard":{
+    "name": "",
+    "bio" :"مهندس برمجيات فول ستاك, مستعد دائما اتعلم شغلات جديده وتقنيات جديده, خبره باستخدام VueJs/NuxtJs/ReactJs/NextJs في تطوير الواجهات الاماميه  (front-end) و .NET في تطوير الواجهات الخلفيه (back-end)"
+  },
   "heroSection": {
     "heading": {
       "software": "مهندس",
       "engineer": "برمجيات"
     },
     "bio": "شغوف بإنشاء تجارب مستخدم سهلة وجذابة. متخصص في تحويل الأفكار إلى منتجات مصممة بإتقان",
-    "stats": {}
+    "stats": {
+      "yearsOfExp": {
+        "number": "+٣",
+        "title": "سنوات من الخبرة"
+      },
+      "projectsCompleted": {
+        "number": "+١٠",
+        "title": "مشاريع منجزة"
+      },
+      "worldWorldClient": {
+        "number": "+١٠",
+        "title": "زباين من كل العالم"
+      }
+    }
   },
   "experienceSection":{
     "heading": {

@@ -4,12 +4,12 @@ type IProps = {
     secondaryTextTranslationKey: string,
 }
 
-const props = defineProps<IProps>();
+defineProps<IProps>();
 
 </script>
 
 <template>
-    <h1 class="section-heading">
+    <h1 dir="auto" class="section-heading">
         <span class="dark:text-white text-gray uppercase">{{ $t(primaryTextTranslationKey) }}</span>
         <span class="dark:text-soft-gray text-black uppercase">{{ $t(secondaryTextTranslationKey) }}</span>
     </h1>

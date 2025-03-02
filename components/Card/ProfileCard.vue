@@ -40,9 +40,8 @@ const socialmediaNavItems = computed(() => [
 
             <!-- Description and icons -->
             <div class="profile-bio__description-icon">
-                <p>
-                    A dedicated full stack software engineer, who is always willing to learn new stuff,
-                    and try new things.
+                <p dir="auto">
+                    {{ $t('profileCard.bio') }}
                 </p>
 
                 <ul>
@@ -59,7 +58,7 @@ const socialmediaNavItems = computed(() => [
 
 <style lang="scss">
 .profile-card {
-    @apply h-[600px] w-full bg-white rounded-xl flex flex-col justify-start items-center py-6 px-7 text-center;
+    @apply h-[650px] w-full bg-white rounded-xl flex flex-col justify-start items-center py-6 px-7 text-center;
 
     .profile-image {
         @apply h-[284px] w-[240px] flex justify-center;

@@ -8,7 +8,7 @@ import SectionHeading from '~/components/Heading/SectionHeading.vue';
 <template>
     <section>
         <!-- Info -->
-        <div class="hero-info">
+        <div dir="auto" class="hero-info">
             <SectionHeading primary-text-translation-key="heroSection.heading.software"
                 secondary-text-translation-key="heroSection.heading.engineer" />
 
@@ -18,20 +18,20 @@ import SectionHeading from '~/components/Heading/SectionHeading.vue';
         </div>
 
         <!-- Stats -->
-        <div class="hero-stats">
+        <div dir="auto" class="hero-stats">
             <div class="hero-stats__item">
-                <span>+99</span>
-                <p>YEARS OF EXPEREINCE</p>
+                <span>{{ $t('heroSection.stats.yearsOfExp.number') }}</span>
+                <p>{{ $t('heroSection.stats.yearsOfExp.title') }}</p>
             </div>
 
             <div class="hero-stats__item">
-                <span>+99</span>
-                <p>PROJECTS COMPLETED</p>
+                <span>{{ $t('heroSection.stats.projectsCompleted.number') }}</span>
+                <p>{{ $t('heroSection.stats.projectsCompleted.title') }}</p>
             </div>
 
             <div class="hero-stats__item">
-                <span>+99</span>
-                <p>WORLDWIDE CLIENTS</p>
+                <span>{{ $t('heroSection.stats.worldWorldClient.number') }}</span>
+                <p>{{ $t('heroSection.stats.worldWorldClient.title') }}</p>
             </div>
         </div>
 
