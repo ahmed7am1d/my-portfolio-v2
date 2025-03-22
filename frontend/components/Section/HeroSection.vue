@@ -2,7 +2,6 @@
 // Components
 import SectionHeading from '~/components/Heading/SectionHeading.vue';
 
-
 </script>
 
 <template>
@@ -21,16 +20,19 @@ import SectionHeading from '~/components/Heading/SectionHeading.vue';
         <div dir="auto" class="hero-stats">
             <div class="hero-stats__item">
                 <span>{{ $t('heroSection.stats.yearsOfExp.number') }}</span>
+
                 <p>{{ $t('heroSection.stats.yearsOfExp.title') }}</p>
             </div>
 
             <div class="hero-stats__item">
                 <span>{{ $t('heroSection.stats.projectsCompleted.number') }}</span>
+
                 <p>{{ $t('heroSection.stats.projectsCompleted.title') }}</p>
             </div>
 
             <div class="hero-stats__item">
                 <span>{{ $t('heroSection.stats.worldWorldClient.number') }}</span>
+
                 <p>{{ $t('heroSection.stats.worldWorldClient.title') }}</p>
             </div>
         </div>
