@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/fonts",
     "@nuxtjs/i18n",
+    "@nuxtjs/sanity",
   ],
 
   // i18n

@@ -12,6 +12,8 @@
   "dependencies": {
     "@nuxt/fonts": "^0.10.2",
     "@nuxt/image": "^1.8.1",
+    "@nuxtjs/sanity": "^1.13.3",
+    "@sanity/client": "^6.29.1",
     "nuxt": "^3.13.2",
     "nuxt-icons": "^3.2.1",
     "sass": "^1.80.4",
