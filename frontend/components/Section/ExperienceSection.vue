@@ -3,19 +3,10 @@
 import SectionHeading from '~/components/Heading/SectionHeading.vue';
 import JobCard from '~/components/Card/JobCard.vue';
 
-// Constants
-import { STRAPI_LOCALE_BY_I18N_LOCALE } from '~/localization/constants/starpi-locale-by-i18n-locale.map'
-
 // Utils
-const { find } = useStrapi()
 const { locale } = useI18n()
 
 // Layout
-// const { data } = await find('experiences', {
-//     locale: STRAPI_LOCALE_BY_I18N_LOCALE[locale.value]
-// })
-// console.log(data);
-
 const jobItems = [
     {
         jobTitle: 'Software Engineer',

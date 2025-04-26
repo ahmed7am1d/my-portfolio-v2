@@ -10,7 +10,6 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/fonts",
     "@nuxtjs/i18n",
-    "@nuxtjs/strapi",
   ],
 
   // i18n
@@ -47,7 +46,4 @@ export default defineNuxtConfig({
       },
     },
   },
-
-  // Strapi
-  strapi: {},
 });
