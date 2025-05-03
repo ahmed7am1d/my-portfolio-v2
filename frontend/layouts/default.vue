@@ -72,7 +72,7 @@ const { setLocale } = useI18n()
         @apply flex flex-col gap-x-20 lg:grid lg:grid-cols-12 min-h-screen;
 
         aside {
-          @apply col-span-5 xl:col-span-4 sticky top-20 h-fit z-40;
+          @apply col-span-5 xl:col-span-4 sticky top-10 h-fit z-40;
         }
 
         article {
