@@ -1,16 +1,16 @@
 <script setup lang="ts">
-// Types 
+// Types
 import type { Experience } from '~/libs/App/types/sanity.types';
 
 // Components
 import SectionHeading from '~/components/Heading/SectionHeading.vue';
-import JobCard from '~/components/Card/JobCard.vue';
+import ExperienceCard from '~/components/Card/ExperienceCard.vue';
 
 // Utils
 const { locale } = useI18n()
 
 // Layout
-const jobItemsData = ref<Experience[]>()
+const experienceItemsData = ref<Experience[]>()
 
 
 // Data fetching and setting
@@ -19,7 +19,7 @@ const query = groq`*[_type == "experience" && language == "${locale.value}"]`
 try {
   const { data, refresh, error } = await useSanityQuery<Experience[]>(query)
   console.log('Data fetched:', data.value)
-  jobItemsData.value = data.value || []
+  experienceItemsData.value = data.value || []
 } catch (error) {
   console.error('Error fetching data:', error)
 }
@@ -32,7 +32,7 @@ try {
       secondary-text-translation-key="experienceSection.heading.secondary" />
 
     <!-- Job card -->
-    <JobCard v-if="jobItemsData" v-for="job in jobItemsData" :experience="job" />
+    <ExperienceCard v-if="experienceItemsData" v-for="experience in experienceItemsData" :experience="experience" />
   </section>
 </template>
 

@@ -13,9 +13,9 @@ const { locale } = useI18n()
 </script>
 
 <template>
-  <div dir="auto" class="job-card">
+  <div dir="auto" class="experience-card">
     <!-- Details (Title + Description) -->
-    <div class="job-card__details">
+    <div class="experience-card__details">
       <!-- Title -->
       <h3>{{ experience.title }}</h3>
 
@@ -34,7 +34,7 @@ const { locale } = useI18n()
 </template>
 
 <style scoped lang="scss">
-.job-card {
+.experience-card{
   @apply flex flex-col gap-y-5 relative;
 
   &__details {
