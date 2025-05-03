@@ -1,29 +1,33 @@
 <script setup lang="ts">
+// Types
+import type { Experience } from '~/libs/App/types/sanity.types';
+
 type IProp = {
-  jobTitle: string
-  jobDescription: string
-  jobDuration: string
+  experience: Experience
 }
 
 const props = defineProps<IProp>()
+
+// Utils
+const { locale } = useI18n()  
 </script>
 
 <template>
-  <div class="job-card">
+  <div dir="auto" class="job-card">
     <!-- Details (Title + Description) -->
     <div class="job-card__details">
       <!-- Title -->
-      <h3>{{ jobTitle }}</h3>
+      <h3>{{ experience.title }}</h3>
 
       <!-- Description -->
-      <p>{{ jobDescription }}</p>
+      <p>{{ experience.description }}</p>
     </div>
 
     <!-- Duration -->
-    <p>{{ jobDuration }}</p>
+    <p>{{ experience.startDate }} {{ experience.endDate ? ` - ${experience.endDate}` : ' - Current'  }}</p>
 
     <!-- Arrow -->
-    <div class="arrow-nav">
+    <div :class="['arrow-nav', locale === 'ar-IQ' ? 'left-0' : 'right-0']">
       <spna>➤</spna>
     </div>
   </div>
@@ -46,7 +50,7 @@ const props = defineProps<IProp>()
   }
 
   .arrow-nav {
-    @apply absolute text-primary right-0 -rotate-45 hover:cursor-pointer;
+    @apply absolute text-primary  -rotate-45 hover:cursor-pointer;
   }
 }
 </style>

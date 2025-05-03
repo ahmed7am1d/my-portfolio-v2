@@ -47,4 +47,10 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  // Sanity
+  sanity: {
+    projectId: process.env.SANITY_PROJECT_ID,
+    dataset: 'production',
+  }
 });
