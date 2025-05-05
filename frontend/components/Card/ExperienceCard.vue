@@ -24,7 +24,7 @@ const { locale } = useI18n()
     </div>
 
     <!-- Duration -->
-    <p>{{ experience.startDate }} {{ experience.endDate ? ` - ${experience.endDate}` : ' - Current'  }}</p>
+    <p>{{ experience.startDate }} {{ experience.endDate ? ` | ${experience.endDate}` : ' | Current'  }}</p>
 
     <!-- Arrow -->
     <div :class="['arrow-nav', locale === 'ar-IQ' ? 'left-0' : 'right-0']">

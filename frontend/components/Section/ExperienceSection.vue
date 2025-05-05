@@ -14,7 +14,7 @@ const experienceItemsData = ref<Experience[]>()
 
 
 // Data fetching and setting
-const query = groq`*[_type == "experience" && language == "${locale.value}"]`
+const query = groq`*[_type == "experience" && language == "${locale.value}"] | order(startDate desc)`
 
 try {
   const { data, refresh, error } = await useSanityQuery<Experience[]>(query)

@@ -4,10 +4,14 @@
 
 $baseFontSize: 16px;
 
+:root {
+  --font-default: 'Poppins', sans-serif;
+  --font-arabic: 'notokufiarabic', sans-serif;
+}
+
 html {
   font-size: $baseFontSize;
   overflow-x: visible;
-  font-family: 'Poppins';
 }
 
 html,
@@ -18,4 +22,12 @@ body,
   // text-rendering: optimizeLegibility;
   // font-synthesis: none;
   // font-weight: 500;
+}
+
+.font-default {
+  font-family: var(--font-default);
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
 }
