@@ -22,18 +22,18 @@
         "title" : "YEARS OF EXPEREINCE"
       },
       "projectsCompleted": {
-        "number": "+10",
+        "number": "+7",
         "title": "PROJECT COMPLETED"
       },
       "worldWorldClient": {
-        "number": "+10",
+        "number": "+4",
         "title": "WORLDWIDE CLIENTS"
       }
     }
   },
   "experienceSection":{
     "heading": {
-      "primary": "2 YEARS OF",
+      "primary": "3 YEARS OF",
       "secondary": "EXPERIENCE"
     }
   },
