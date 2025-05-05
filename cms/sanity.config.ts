@@ -20,7 +20,7 @@ export default defineConfig({
         {id:'en-US', title: 'English'},
         {id: 'ar-IQ', title: 'Arabic'},
       ],
-      schemaTypes: ['experience'],
+      schemaTypes: ['experience', 'project'],
     })
   ],
 
