@@ -1,8 +1,9 @@
 <script setup lang="ts">
+// Types
+import type { Project } from '~/libs/App/types/sanity.types';
+
 type IProp = {
-    imageLocation: string
-    projectTitle: string
-    projectDescription: string
+    project: Project
 }
 
 defineProps<IProp>()
@@ -11,12 +12,16 @@ defineProps<IProp>()
 <template>
     <div class="project-card">
         <div class="project-card__image-container">
-            <NuxtImg :src="imageLocation" />
+            <SanityImage
+                :asset-id="project.image?.asset?._ref"
+                auto="format"
+            />
         </div>
 
         <div class="project-card__about-container">
-            <h3>{{ projectTitle }}</h3>
-            <p>{{ projectDescription }}</p>
+            <h3>{{ project.title }}</h3>
+
+            <p>{{ project.description }}</p>
         </div>
     </div>
 </template>
@@ -26,10 +31,10 @@ defineProps<IProp>()
     @apply flex flex-row items-center gap-x-5 h-36;
 
     &__image-container {
-        @apply h-fit w-fit border-primary border;
+        @apply h-fit w-fit border-primary border rounded-md;
 
         img {
-            @apply min-h-40 max-h-44 min-w-20 max-w-36 object-contain;
+            @apply min-h-40 max-h-44 min-w-20 max-w-36 object-cover pt-2 px-2 bg-primary;
         }
     }
 

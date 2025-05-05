@@ -6,10 +6,10 @@ type IProp = {
   experience: Experience
 }
 
-const props = defineProps<IProp>()
+defineProps<IProp>()
 
 // Utils
-const { locale } = useI18n()  
+const { locale } = useI18n()
 </script>
 
 <template>

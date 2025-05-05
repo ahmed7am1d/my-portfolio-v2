@@ -1,26 +1,27 @@
 <script setup lang="ts">
+// Types 
+import type { Project } from '~/libs/App/types/sanity.types';
+
 // Components
 import SectionHeading from '~/components/Heading/SectionHeading.vue';
 import ProjectCard from '~/components/Card/ProjectCard.vue';
 
-// Layout 
-const projectItems = [
-    {
-        imageLocation: '/todo-project.png',
-        projectTitle: 'First project',
-        projectDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    },
-    {
-        imageLocation: '/todo-project.png',
-        projectTitle: 'Second project',
-        projectDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    },
-    {
-        imageLocation: '/todo-project.png',
-        projectTitle: 'Third project',
-        projectDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    },
-]
+// Utils
+const { locale } = useI18n()
+
+// Layout
+const projectItemsData = ref<Project[]>()
+
+// Data fetching and setting
+const query = groq`*[_type == "project" && language == "${locale.value}"]`
+
+try {
+    const { data, refresh, error } = await useSanityQuery<Project[]>(query)
+    console.log('Data fetched:', data.value)
+    projectItemsData.value = data.value || []
+} catch (error) {
+    console.error('Error fetching data:', error)
+}
 
 </script>
 
@@ -31,11 +32,7 @@ const projectItems = [
             secondary-text-translation-key="projectsSection.heading.secondary" />
 
         <!-- Project card -->
-         <ProjectCard v-for="project in projectItems"
-            :image-location="project.imageLocation"
-            :project-title="project.projectTitle"
-            v-bind:project-description="project.projectDescription"
-         />
+        <ProjectCard v-if="projectItemsData" v-for="project in projectItemsData" :project="project" />
     </section>
 </template>
 
