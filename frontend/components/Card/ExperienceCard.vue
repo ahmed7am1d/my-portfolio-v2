@@ -27,9 +27,9 @@ const { locale } = useI18n()
     <p>{{ experience.startDate }} {{ experience.endDate ? ` | ${experience.endDate}` : ' | Current'  }}</p>
 
     <!-- Arrow -->
-    <div :class="['arrow-nav', locale === 'ar-IQ' ? 'left-0' : 'right-0']">
+    <NuxtLink :to="experience.url" rel="noopener" target="_blank" :class="['arrow-nav', locale === 'ar-IQ' ? 'left-0' : 'right-0']">
       <spna>➤</spna>
-    </div>
+    </NuxtLink>
   </div>
 </template>
 
