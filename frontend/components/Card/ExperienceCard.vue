@@ -28,7 +28,7 @@ const { locale } = useI18n()
 
     <!-- Arrow -->
     <NuxtLink :to="experience.url" rel="noopener" target="_blank" :class="['arrow-nav', locale === 'ar-IQ' ? 'left-0' : 'right-0']">
-      <spna>➤</spna>
+      <span>➤</span>
     </NuxtLink>
   </div>
 </template>

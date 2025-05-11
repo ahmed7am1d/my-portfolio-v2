@@ -28,7 +28,7 @@ const props = defineProps<IProp>()
 
     <!-- Arrow -->
     <div class="arrow-nav">
-      <spna>➤</spna>
+      <span>➤</span>
     </div>
   </div>
 </template>

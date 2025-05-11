@@ -18,7 +18,6 @@ const query = groq`*[_type == "experience" && language == "${locale.value}"] | o
 
 try {
   const { data, refresh, error } = await useSanityQuery<Experience[]>(query)
-  console.log('Data fetched:', data.value)
   experienceItemsData.value = data.value || []
 } catch (error) {
   console.error('Error fetching data:', error)

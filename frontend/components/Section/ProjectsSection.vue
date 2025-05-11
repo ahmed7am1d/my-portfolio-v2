@@ -17,7 +17,6 @@ const query = groq`*[_type == "project" && language == "${locale.value}"]`
 
 try {
     const { data, refresh, error } = await useSanityQuery<Project[]>(query)
-    console.log('Data fetched:', data.value)
     projectItemsData.value = data.value || []
 } catch (error) {
     console.error('Error fetching data:', error)
