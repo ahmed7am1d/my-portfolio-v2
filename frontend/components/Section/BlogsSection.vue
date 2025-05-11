@@ -1,9 +1,16 @@
 <script setup lang="ts">
+// Types
+import type { Blog } from '~/libs/App/types/sanity.types';
+
 // Components
 import SectionHeading from '~/components/Heading/SectionHeading.vue';
 import BlogCard from '~/components/Card/BlogCard.vue';
 
+// Utils
+const { locale } = useI18n()
+
 // Layout
+const blogItemsData = ref<Blog[]>()
 const blogItems = [
     {
         blogTitle: 'First blog',
@@ -25,6 +32,17 @@ const blogItems = [
     },
 ]
 
+// Data fetching and setting
+const query = groq`*[_type == "blog" && language == "${locale.value}"]`
+
+try {
+  const { data, refresh, error } = await useSanityQuery<any[]>(query)
+  console.log('Data fetched:', data.value)
+  blogItemsData.value = data.value || []
+} catch (error) {
+  console.error('Error fetching data:', error)
+}
+
 </script>
 
 <template>
@@ -34,11 +52,9 @@ const blogItems = [
       secondary-text-translation-key="blogsSection.heading.secondary" />
 
     <!-- Blog card -->
-    <BlogCard v-for="blog in blogItems"
-      :blog-title="blog.blogTitle"
-      :blog-short-description="blog.blogShortDescription"
-      :blog-time-posted="blog.blogTimePosted"
-      :blog-time-to-read="blog.blogTimeToRead"/>
+    <BlogCard
+      v-for="blog in blogItemsData"
+      :blog="blog"/>
   </section>
 </template>
 

@@ -1,9 +1,9 @@
 <script setup lang="ts">
+// Types
+import type { Blog } from '~/libs/App/types/sanity.types';
+
 type IProp = {
-  blogTitle: string
-  blogShortDescription: string
-  blogTimePosted: string
-  blogTimeToRead: string
+  blog: Blog
 }
 
 const props = defineProps<IProp>()
@@ -14,16 +14,16 @@ const props = defineProps<IProp>()
     <!-- Details (Title + Description) -->
     <div class="job-card__details">
       <!-- Title -->
-      <h3>{{ blogTitle }}</h3>
+      <h3>{{ blog.title }}</h3>
 
       <!-- Description -->
-      <p>{{ blogShortDescription }}</p>
+      <p>{{ blog.excerpt }}</p>
     </div>
 
     <!-- Time posted and time to read -->
      <div class="w-full flex justify-between">
-        <p>{{ blogTimePosted }}</p>
-        <p>{{ blogTimeToRead }}</p>
+        <p>{{ blog.publishedAt }}</p>
+        <p>{{ blog.readingTime }}</p>
      </div>
 
     <!-- Arrow -->
