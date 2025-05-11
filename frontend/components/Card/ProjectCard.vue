@@ -7,15 +7,14 @@ type IProp = {
 }
 
 defineProps<IProp>()
+// Utils
+const { locale } = useI18n()
 </script>
 
 <template>
     <div class="project-card">
         <div class="project-card__image-container">
-            <SanityImage
-                :asset-id="project.image?.asset?._ref"
-                auto="format"
-            />
+            <SanityImage :asset-id="project.image?.asset?._ref" auto="format" />
         </div>
 
         <div class="project-card__about-container">
@@ -23,12 +22,18 @@ defineProps<IProp>()
 
             <p>{{ project.description }}</p>
         </div>
+
+        <!-- Arrow -->
+        <NuxtLink :to="project.projectLink" rel="noopener" target="_blank"
+            :class="['arrow-nav', locale === 'ar-IQ' ? 'left-0' : 'right-0']">
+            <spna>➤</spna>
+        </NuxtLink>
     </div>
 </template>
 
 <style scoped lang="scss">
 .project-card {
-    @apply flex flex-row items-center gap-x-5 h-36;
+    @apply flex flex-row items-center gap-x-5 h-36 relative;
 
     &__image-container {
         @apply h-fit w-fit border-primary border rounded-md;
@@ -42,14 +47,16 @@ defineProps<IProp>()
         @apply flex flex-col justify-center overflow-hidden;
 
         h3 {
-            @apply dark:text-white text-black text-3xl
-                   truncate; // Truncate for long titles
+            @apply dark:text-white text-black text-3xl truncate; // Truncate for long titles
         }
 
         p {
-            @apply text-gray text-lg
-                   line-clamp-3; // 3 lines only
+            @apply text-gray text-lg line-clamp-3; // 3 lines only
         }
+    }
+
+    .arrow-nav {
+        @apply absolute text-primary -rotate-45 hover:cursor-pointer top-0;
     }
 }
 </style>
