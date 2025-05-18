@@ -6,13 +6,24 @@ import ProfileCard from '~/components/Card/ProfileCard.vue';
 const colorMode = useColorMode()
 const { setLocale } = useI18n()
 
+// Functions
+function handleToggleTheme() {
+  colorMode.value = colorMode.value === 'light' ? 'dark' : 'light';
+}
+
 </script>
 
 <template>
   <div class="app-layout">
     <!-- Header/Navbar -->
     <header class="app-header" role="banner">
+      <!-- Navbar -->
       <NavBar />
+
+      <!-- Dark/light icon -->
+      <div class="app-header__dark-light-wrapper">
+        <nuxt-icon @click="handleToggleTheme" name="light-bulb" filled :aria-hidden="true" />
+      </div>
     </header>
 
     <!-- Main -->
@@ -28,19 +39,6 @@ const { setLocale } = useI18n()
           <article>
             <slot />
           </article>
-
-          <!-- Dark mode (just testing) -->
-          <div class="col-span-5">
-            <ClientOnly>
-              <h1 class="dark:text-white">Color mode: {{ colorMode.value }} (bad design I know 😁)</h1>
-              <select v-model="$colorMode.preference">
-                <option value="system">System</option>
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-                <option value="sepia">Sepia</option>
-              </select>
-            </ClientOnly>
-          </div>
 
           <!-- Locale (just testing) -->
           <div class="col-span-5 flex flex-col gap-y-2">
@@ -63,6 +61,83 @@ const { setLocale } = useI18n()
 <style lang="scss">
 .app-layout {
   @apply w-full min-h-full h-full dark:bg-theme-dark bg-theme-light;
+
+  .app-header {
+    @apply relative;
+
+    // Animation for the bulb's tail
+    @keyframes swing {
+      0% {
+        transform: translateX(-50%) rotate(0deg);
+      }
+
+      25% {
+        transform: translateX(-50%) rotate(5deg);
+      }
+
+      50% {
+        transform: translateX(-50%) rotate(0deg);
+      }
+
+      75% {
+        transform: translateX(-50%) rotate(-5deg);
+      }
+
+      100% {
+        transform: translateX(-50%) rotate(0deg);
+      }
+    }
+
+    &__dark-light-wrapper {
+      /* Position the wrapper fixed on screen */
+      @apply fixed right-4 z-10 select-none ;
+
+      /* Mobile positioning at bottom */
+      @apply bottom-[6%];
+
+      /* Desktop positioning at top */
+      @apply sm:top-4 sm:bottom-0;
+
+      /* Set up the icon container */
+      .nuxt-icon {
+        @apply relative;
+        display: inline-block;
+      }
+
+      /* Create the bulb tail */
+      .nuxt-icon::after {
+        content: '';
+        @apply absolute -bottom-3 sm:-bottom-5 left-1/2 ;
+        @apply transform -translate-x-1/2;
+        @apply w-0.5 h-4 sm:h-6 bg-white rounded-b-md;
+        transform: translateX(-50%);
+        transform-origin: top center;
+        /* This makes it swing from the top */
+        transition: all 0.3s ease;
+      }
+
+
+      /* Add a new hover state for the tail */
+      .nuxt-icon:hover::after {
+        animation: swing 1s ease-in-out infinite;
+      }
+
+      /* Style the bulb icon itself */
+      .nuxt-icon svg {
+        /* Base size and colors */
+        @apply relative;
+        @apply w-10 h-10 dark:text-white text-primary;;
+
+        /* Larger on desktop */
+        @apply sm:w-12 sm:h-12;
+      }
+
+      /* Hover effect */
+      .nuxt-icon svg:hover {
+        @apply cursor-pointer dark:!text-yellow-400 !text-amber-600;
+      }
+    }
+  }
 
   .app-main {
     @apply flex-1 w-full relative;
