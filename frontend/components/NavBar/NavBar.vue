@@ -1,6 +1,9 @@
 <script setup lang="ts">
-/* __placeholder__ */
+// Types
 import type { INavigationItem } from './types/navbar.type';
+
+// Utils
+const { setLocale, locale: i18nLocale } = useI18n()
 
 // Layout
 const navigationItems = computed<INavigationItem[]>(() => [
@@ -9,7 +12,7 @@ const navigationItems = computed<INavigationItem[]>(() => [
         id: 'home',
         iconPath: 'home',
         textToDisplay: 'Home',
-        translationKey:'nav.home',
+        translationKey: 'nav.home',
         translationKeyPosition: 1,
         to: '',
     },
@@ -54,6 +57,20 @@ const navigationItems = computed<INavigationItem[]>(() => [
         to: '',
     },
 ])
+
+// Functions
+function handleLocaleChange(locale: 'EN' | 'AR') {
+    const localeCode = locale === 'EN' ? 'en-US' : 'ar-IQ'
+    setLocale(localeCode)
+}
+
+function getLocaleClass(locale: 'EN' | 'AR') {
+    const currentLocaleCode = i18nLocale.value
+    const isActive = (locale === 'EN' && currentLocaleCode === 'en-US') ||
+        (locale === 'AR' && currentLocaleCode === 'ar-IQ')
+
+    return isActive ? 'is-active-locale' : ''
+}
 </script>
 
 <template>
@@ -66,6 +83,12 @@ const navigationItems = computed<INavigationItem[]>(() => [
                     <span class="nav-item-tooltip" role="tooltip"> {{ $t(navItem.translationKey, navItem.translationKeyPosition) }} </span>
                 </NuxtLink>
             </li>
+
+            <div class="locale-container">
+                <span class="locale-container__EN" :class="getLocaleClass('EN')" @click="handleLocaleChange('EN')">EN</span>
+                <span>|</span>
+                <span class="locale-container__AR" :class="getLocaleClass('AR')" @click="handleLocaleChange('AR')">AR</span>
+            </div>
         </ul>
     </nav>
 </template>
@@ -75,7 +98,7 @@ nav {
     @apply flex justify-center w-full;
 
     ul {
-        @apply flex flex-row items-center gap-x-10 h-12 px-5 text-white rounded-2xl dark:bg-nav-dark bg-nav-light my-10;
+        @apply flex flex-row items-center gap-x-9 h-12 px-5 text-white rounded-2xl dark:bg-nav-dark bg-nav-light my-10;
 
         li {
             @apply relative hover:cursor-pointer;
@@ -95,6 +118,19 @@ nav {
 
                 .nuxt-icon svg {
                     @apply text-primary;
+                }
+            }
+        }
+
+        .locale-container {
+            @apply flex gap-x-2 select-none text-black dark:text-white;
+
+            &__EN,
+            &__AR {
+                @apply hover:cursor-pointer hover:text-primary;
+
+                &.is-active-locale {
+                    @apply text-primary font-semibold;
                 }
             }
         }

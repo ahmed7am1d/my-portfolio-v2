@@ -20,10 +20,11 @@ function handleToggleTheme() {
       <!-- Navbar -->
       <NavBar />
 
-      <!-- Dark/light icon -->
+      <!-- Theme wrapper -->
       <div class="app-header__dark-light-wrapper">
-        <nuxt-icon @click="handleToggleTheme" name="light-bulb" filled :aria-hidden="true" />
+        <nuxt-icon class="bulb-icon" @click="handleToggleTheme" name="light-bulb" filled :aria-hidden="true" />
       </div>
+
     </header>
 
     <!-- Main -->
@@ -39,16 +40,6 @@ function handleToggleTheme() {
           <article>
             <slot />
           </article>
-
-          <!-- Locale (just testing) -->
-          <div class="col-span-5 flex flex-col gap-y-2">
-            <h1 class="dark:text-white text-black">Locale:</h1>
-            <div class="flex gap-x-2">
-              <button @click="setLocale('en-US')" class="dark:bg-white bg-gray p-2">EN </button>
-              <button @click="setLocale('ar-IQ')" class="dark:bg-white bg-gray p-2">AR</button>
-            </div>
-            <p class="dark:text-white text-black">{{ $t('welcome') }}</p>
-          </div>
         </div>
       </div>
     </main>
@@ -90,43 +81,34 @@ function handleToggleTheme() {
 
     &__dark-light-wrapper {
       /* Position the wrapper fixed on screen */
-      @apply fixed right-4 z-10 select-none ;
-
-      /* Mobile positioning at bottom */
-      @apply bottom-[6%];
+      @apply fixed right-4 z-10 select-none;
 
       /* Desktop positioning at top */
-      @apply sm:top-4 sm:bottom-0;
+      @apply top-4 bottom-0;
 
       /* Set up the icon container */
       .nuxt-icon {
-        @apply relative;
+        @apply relative rotate-180;
         display: inline-block;
       }
 
       /* Create the bulb tail */
-      .nuxt-icon::after {
+      .bulb-icon::after {
         content: '';
-        @apply absolute -bottom-3 sm:-bottom-5 left-1/2 ;
+        @apply absolute -bottom-3 sm:-bottom-5 left-1/2;
         @apply transform -translate-x-1/2;
-        @apply w-0.5 h-4 sm:h-6 bg-white rounded-b-md;
+        @apply w-0.5 h-4 sm:h-6 bg-gray dark:bg-white rounded-b-md;
         transform: translateX(-50%);
         transform-origin: top center;
         /* This makes it swing from the top */
         transition: all 0.3s ease;
       }
 
-
-      /* Add a new hover state for the tail */
-      .nuxt-icon:hover::after {
-        animation: swing 1s ease-in-out infinite;
-      }
-
       /* Style the bulb icon itself */
       .nuxt-icon svg {
         /* Base size and colors */
         @apply relative;
-        @apply w-10 h-10 dark:text-white text-primary;;
+        @apply w-10 h-10 dark:text-white text-primary;
 
         /* Larger on desktop */
         @apply sm:w-12 sm:h-12;
