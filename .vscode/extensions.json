@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint", // ESLint support
+        "vue.volar", // (sometimes needed for Nuxt + TS)
+        "lokalise.i18n-ally", // i18n Ally
+        "bradlc.vscode-tailwindcss", // Tailwind CSS IntelliSense
+        "csstools.postcss", // For better PostCSS syntax support
+        "naumovs.color-highlight" // For color highlight 
+    ],
+}

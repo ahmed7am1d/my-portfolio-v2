@@ -4,7 +4,7 @@ import { useLocaleSettings } from '~/libs/App/functions/useLocaleSettings'
 
 // Utils
 const { locale } = useI18n()
-const { dir, fontFamily } = useLocaleSettings()
+const { dir } = useLocaleSettings()
 
 useHead(() => ({
   htmlAttrs: {

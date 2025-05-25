@@ -4,7 +4,6 @@ import ProfileCard from '~/components/Card/ProfileCard.vue'
 
 // Utils
 const colorMode = useColorMode()
-const { setLocale } = useI18n()
 
 // Functions
 function handleToggleTheme() {

@@ -16,7 +16,7 @@ const blogItemsData = ref<Blog[]>()
 const query = groq`*[_type == "blog" && language == "${locale.value}"]`
 
 try {
-  const { data, refresh, error } = await useSanityQuery<any[]>(query)
+  const { data } = await useSanityQuery<any[]>(query)
   blogItemsData.value = data.value || []
 }
 catch (error) {

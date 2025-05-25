@@ -6,7 +6,7 @@ type IProp = {
   blog: Blog
 }
 
-const props = defineProps<IProp>()
+defineProps<IProp>()
 </script>
 
 <template>
