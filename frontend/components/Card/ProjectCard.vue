@@ -1,9 +1,9 @@
 <script setup lang="ts">
 // Types
-import type { Project } from '~/libs/App/types/sanity.types';
+import type { Project } from '~/libs/App/types/sanity.types'
 
 type IProp = {
-    project: Project
+  project: Project
 }
 
 defineProps<IProp>()
@@ -12,23 +12,30 @@ const { locale } = useI18n()
 </script>
 
 <template>
-    <div class="project-card">
-        <div class="project-card__image-container">
-            <SanityImage :asset-id="project.image?.asset?._ref" auto="format" />
-        </div>
-
-        <div class="project-card__about-container">
-            <h3>{{ project.title }}</h3>
-
-            <p>{{ project.description }}</p>
-        </div>
-
-        <!-- Arrow -->
-        <NuxtLink :to="project.projectLink" rel="noopener" target="_blank"
-            :class="['arrow-nav', locale === 'ar-IQ' ? 'left-0' : 'right-0']">
-            <span>➤</span>
-        </NuxtLink>
+  <div class="project-card">
+    <div class="project-card__image-container">
+      <SanityImage
+        :asset-id="project.image?.asset?._ref"
+        auto="format"
+      />
     </div>
+
+    <div class="project-card__about-container">
+      <h3>{{ project.title }}</h3>
+
+      <p>{{ project.description }}</p>
+    </div>
+
+    <!-- Arrow -->
+    <NuxtLink
+      :to="project.projectLink"
+      rel="noopener"
+      target="_blank"
+      :class="['arrow-nav', locale === 'ar-IQ' ? 'left-0' : 'right-0']"
+    >
+      <span>➤</span>
+    </NuxtLink>
+  </div>
 </template>
 
 <style scoped lang="scss">

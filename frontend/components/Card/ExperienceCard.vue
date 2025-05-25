@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Types
-import type { Experience } from '~/libs/App/types/sanity.types';
+import type { Experience } from '~/libs/App/types/sanity.types'
 
 type IProp = {
   experience: Experience
@@ -13,7 +13,10 @@ const { locale } = useI18n()
 </script>
 
 <template>
-  <div dir="auto" class="experience-card">
+  <div
+    dir="auto"
+    class="experience-card"
+  >
     <!-- Details (Title + Description) -->
     <div class="experience-card__details">
       <!-- Title -->
@@ -24,10 +27,15 @@ const { locale } = useI18n()
     </div>
 
     <!-- Duration -->
-    <p>{{ experience.startDate }} {{ experience.endDate ? ` | ${experience.endDate}` : ' | Current'  }}</p>
+    <p>{{ experience.startDate }} {{ experience.endDate ? ` | ${experience.endDate}` : ' | Current' }}</p>
 
     <!-- Arrow -->
-    <NuxtLink :to="experience.url" rel="noopener" target="_blank" :class="['arrow-nav', locale === 'ar-IQ' ? 'left-0' : 'right-0']">
+    <NuxtLink
+      :to="experience.url"
+      rel="noopener"
+      target="_blank"
+      :class="['arrow-nav', locale === 'ar-IQ' ? 'left-0' : 'right-0']"
+    >
       <span>➤</span>
     </NuxtLink>
   </div>

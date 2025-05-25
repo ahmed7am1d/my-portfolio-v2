@@ -1,45 +1,52 @@
 <script setup lang="ts">
 // Components
-import SectionHeading from '~/components/Heading/SectionHeading.vue';
-
+import SectionHeading from '~/components/Heading/SectionHeading.vue'
 </script>
 
 <template>
-    <section>
-        <!-- Info -->
-        <div dir="auto" class="hero-info">
-            <SectionHeading primary-text-translation-key="heroSection.heading.software"
-                secondary-text-translation-key="heroSection.heading.engineer" />
+  <section>
+    <!-- Info -->
+    <div
+      dir="auto"
+      class="hero-info"
+    >
+      <SectionHeading
+        primary-text-translation-key="heroSection.heading.software"
+        secondary-text-translation-key="heroSection.heading.engineer"
+      />
 
-            <p class="hero-info__about">
-                {{ $t('heroSection.bio') }}
-            </p>
-        </div>
+      <p class="hero-info__about">
+        {{ $t('heroSection.bio') }}
+      </p>
+    </div>
 
-        <!-- Stats -->
-        <div dir="auto" class="hero-stats">
-            <div class="hero-stats__item">
-                <span>{{ $t('heroSection.stats.yearsOfExp.number') }}</span>
+    <!-- Stats -->
+    <div
+      dir="auto"
+      class="hero-stats"
+    >
+      <div class="hero-stats__item">
+        <span>{{ $t('heroSection.stats.yearsOfExp.number') }}</span>
 
-                <p>{{ $t('heroSection.stats.yearsOfExp.title') }}</p>
-            </div>
+        <p>{{ $t('heroSection.stats.yearsOfExp.title') }}</p>
+      </div>
 
-            <div class="hero-stats__item">
-                <span>{{ $t('heroSection.stats.projectsCompleted.number') }}</span>
+      <div class="hero-stats__item">
+        <span>{{ $t('heroSection.stats.projectsCompleted.number') }}</span>
 
-                <p>{{ $t('heroSection.stats.projectsCompleted.title') }}</p>
-            </div>
+        <p>{{ $t('heroSection.stats.projectsCompleted.title') }}</p>
+      </div>
 
-            <div class="hero-stats__item">
-                <span>{{ $t('heroSection.stats.worldWorldClient.number') }}</span>
+      <div class="hero-stats__item">
+        <span>{{ $t('heroSection.stats.worldWorldClient.number') }}</span>
 
-                <p>{{ $t('heroSection.stats.worldWorldClient.title') }}</p>
-            </div>
-        </div>
+        <p>{{ $t('heroSection.stats.worldWorldClient.title') }}</p>
+      </div>
+    </div>
 
-        <!-- Additional info -->
-        <div class="hero-additional"></div>
-    </section>
+    <!-- Additional info -->
+    <div class="hero-additional" />
+  </section>
 </template>
 
 <style scoped lang="scss">

@@ -3,18 +3,17 @@
 import { useLocaleSettings } from '~/libs/App/functions/useLocaleSettings'
 
 // Utils
-const {locale} = useI18n()
+const { locale } = useI18n()
 const { dir, fontFamily } = useLocaleSettings()
-
 
 useHead(() => ({
   htmlAttrs: {
     lang: locale.value,
     dir: dir.value,
   },
-  bodyAttrs:{
-    class: dir.value === 'rtl' ? 'font-arabic' : 'font-default'
-  }
+  bodyAttrs: {
+    class: dir.value === 'rtl' ? 'font-arabic' : 'font-default',
+  },
 }))
 </script>
 

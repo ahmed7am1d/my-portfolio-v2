@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Types
-import type { Blog } from '~/libs/App/types/sanity.types';
+import type { Blog } from '~/libs/App/types/sanity.types'
 
 type IProp = {
   blog: Blog
@@ -21,10 +21,10 @@ const props = defineProps<IProp>()
     </div>
 
     <!-- Time posted and time to read -->
-     <div class="w-full flex justify-between">
-        <p>{{ blog.publishedAt }}</p>
-        <p>{{ blog.readingTime }}</p>
-     </div>
+    <div class="w-full flex justify-between">
+      <p>{{ blog.publishedAt }}</p>
+      <p>{{ blog.readingTime }}</p>
+    </div>
 
     <!-- Arrow -->
     <div class="arrow-nav">

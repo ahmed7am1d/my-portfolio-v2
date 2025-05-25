@@ -1,10 +1,10 @@
 <script setup lang="ts">
-// Types 
-import type { Project } from '~/libs/App/types/sanity.types';
+// Types
+import type { Project } from '~/libs/App/types/sanity.types'
 
 // Components
-import SectionHeading from '~/components/Heading/SectionHeading.vue';
-import ProjectCard from '~/components/Card/ProjectCard.vue';
+import SectionHeading from '~/components/Heading/SectionHeading.vue'
+import ProjectCard from '~/components/Card/ProjectCard.vue'
 
 // Utils
 const { locale } = useI18n()
@@ -16,23 +16,29 @@ const projectItemsData = ref<Project[]>()
 const query = groq`*[_type == "project" && language == "${locale.value}"]`
 
 try {
-    const { data, refresh, error } = await useSanityQuery<Project[]>(query)
-    projectItemsData.value = data.value || []
-} catch (error) {
-    console.error('Error fetching data:', error)
+  const { data, refresh, error } = await useSanityQuery<Project[]>(query)
+  projectItemsData.value = data.value || []
 }
-
+catch (error) {
+  console.error('Error fetching data:', error)
+}
 </script>
 
 <template>
-    <section>
-        <!-- Heading -->
-        <SectionHeading primary-text-translation-key="projectsSection.heading.primary"
-            secondary-text-translation-key="projectsSection.heading.secondary" />
+  <section>
+    <!-- Heading -->
+    <SectionHeading
+      primary-text-translation-key="projectsSection.heading.primary"
+      secondary-text-translation-key="projectsSection.heading.secondary"
+    />
 
-        <!-- Project card -->
-        <ProjectCard v-if="projectItemsData" v-for="project in projectItemsData" :project="project" />
-    </section>
+    <!-- Project card -->
+    <ProjectCard
+      v-for="project in projectItemsData"
+      v-if="projectItemsData"
+      :project="project"
+    />
+  </section>
 </template>
 
 <style scoped lang="scss">

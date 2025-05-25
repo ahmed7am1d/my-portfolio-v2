@@ -1,10 +1,10 @@
 <script setup lang="ts">
 // Types
-import type { Blog } from '~/libs/App/types/sanity.types';
+import type { Blog } from '~/libs/App/types/sanity.types'
 
 // Components
-import SectionHeading from '~/components/Heading/SectionHeading.vue';
-import BlogCard from '~/components/Card/BlogCard.vue';
+import SectionHeading from '~/components/Heading/SectionHeading.vue'
+import BlogCard from '~/components/Card/BlogCard.vue'
 
 // Utils
 const { locale } = useI18n()
@@ -18,22 +18,25 @@ const query = groq`*[_type == "blog" && language == "${locale.value}"]`
 try {
   const { data, refresh, error } = await useSanityQuery<any[]>(query)
   blogItemsData.value = data.value || []
-} catch (error) {
+}
+catch (error) {
   console.error('Error fetching data:', error)
 }
-
 </script>
 
 <template>
   <section>
     <!-- Heading -->
-    <SectionHeading primary-text-translation-key="blogsSection.heading.primary"
-      secondary-text-translation-key="blogsSection.heading.secondary" />
+    <SectionHeading
+      primary-text-translation-key="blogsSection.heading.primary"
+      secondary-text-translation-key="blogsSection.heading.secondary"
+    />
 
     <!-- Blog card -->
     <BlogCard
       v-for="blog in blogItemsData"
-      :blog="blog"/>
+      :blog="blog"
+    />
   </section>
 </template>
 

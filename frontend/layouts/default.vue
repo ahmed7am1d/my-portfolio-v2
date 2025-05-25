@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Components
-import ProfileCard from '~/components/Card/ProfileCard.vue';
+import ProfileCard from '~/components/Card/ProfileCard.vue'
 
 // Utils
 const colorMode = useColorMode()
@@ -8,27 +8,38 @@ const { setLocale } = useI18n()
 
 // Functions
 function handleToggleTheme() {
-  colorMode.value = colorMode.value === 'light' ? 'dark' : 'light';
+  colorMode.value = colorMode.value === 'light' ? 'dark' : 'light'
 }
-
 </script>
 
 <template>
   <div class="app-layout">
     <!-- Header/Navbar -->
-    <header class="app-header" role="banner">
+    <header
+      class="app-header"
+      role="banner"
+    >
       <!-- Navbar -->
       <NavBar />
 
       <!-- Theme wrapper -->
       <div class="app-header__dark-light-wrapper">
-        <nuxt-icon class="bulb-icon" @click="handleToggleTheme" name="light-bulb" filled :aria-hidden="true" />
+        <nuxt-icon
+          class="bulb-icon"
+          name="light-bulb"
+          filled
+          :aria-hidden="true"
+          @click="handleToggleTheme"
+        />
       </div>
-
     </header>
 
     <!-- Main -->
-    <main class="app-main" role="main" id="main-content">
+    <main
+      id="main-content"
+      class="app-main"
+      role="main"
+    >
       <div class="content-container">
         <div class="content-grid">
           <!-- Profile card (fixed for all pages) -->
@@ -45,7 +56,10 @@ function handleToggleTheme() {
     </main>
 
     <!-- Footer -->
-    <footer class="app-footer" role="contentinfo"></footer>
+    <footer
+      class="app-footer"
+      role="contentinfo"
+    />
   </div>
 </template>
 

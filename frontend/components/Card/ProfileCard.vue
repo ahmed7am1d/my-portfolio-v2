@@ -1,59 +1,66 @@
 <script setup lang="ts">
 // Layout
 const socialmediaNavItems = computed(() => [
-    // LinkedIn
-    {
-        id: 1,
-        iconPath: 'linkedin',
-        to: '',
-    },
+  // LinkedIn
+  {
+    id: 1,
+    iconPath: 'linkedin',
+    to: '',
+  },
 
-    // Github
-    {
-        id: 2,
-        iconPath: 'github',
-        to: '',
-    },
+  // Github
+  {
+    id: 2,
+    iconPath: 'github',
+    to: '',
+  },
 
-    // Instagram
-    {
-        id: 3,
-        iconPath: 'instagram',
-        to: '',
-    },
+  // Instagram
+  {
+    id: 3,
+    iconPath: 'instagram',
+    to: '',
+  },
 ])
 </script>
 
 <template>
-    <article class="profile-card">
-        <!-- Profile image -->
-        <div class="profile-image">
-            <NuxtImg src="/profile-card.png" />
-        </div>
+  <article class="profile-card">
+    <!-- Profile image -->
+    <div class="profile-image">
+      <NuxtImg src="/profile-card.png" />
+    </div>
 
-        <!-- Profile bio -->
-        <div class="profile-bio">
-            <!-- Name -->
-            <div class="profile-bio__name">
-                <h4>Ahmed Al-Doori</h4>
-            </div>
+    <!-- Profile bio -->
+    <div class="profile-bio">
+      <!-- Name -->
+      <div class="profile-bio__name">
+        <h4>Ahmed Al-Doori</h4>
+      </div>
 
-            <!-- Description and icons -->
-            <div class="profile-bio__description-icon">
-                <p dir="auto">
-                    {{ $t('profileCard.bio') }}
-                </p>
+      <!-- Description and icons -->
+      <div class="profile-bio__description-icon">
+        <p dir="auto">
+          {{ $t('profileCard.bio') }}
+        </p>
 
-                <ul>
-                    <li v-for="navItem in socialmediaNavItems" :key="navItem.id">
-                        <NuxtLink :to="navItem.to">
-                            <nuxt-icon :name="navItem.iconPath" filled :aria-hidden="true" />
-                        </NuxtLink>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </article>
+        <ul>
+          <li
+            v-for="navItem in socialmediaNavItems"
+            :key="navItem.id"
+          >
+            <NuxtLink :to="navItem.to">
+              <nuxt-icon
+                :name="navItem.iconPath"
+                filled
+                :aria-hidden="true"
+              />
+            </NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </article>
 </template>
 
 <style lang="scss">
