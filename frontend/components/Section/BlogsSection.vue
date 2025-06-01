@@ -3,8 +3,8 @@
 import type { Blog } from '~/libs/App/types/sanity.types'
 
 // Components
-import SectionHeading from '~/components/Heading/SectionHeading.vue'
 import BlogCard from '~/components/Card/BlogCard.vue'
+import SectionHeading from '~/components/Heading/SectionHeading.vue'
 
 // Utils
 const { locale } = useI18n()
@@ -42,6 +42,6 @@ catch (error) {
 
 <style scoped lang="scss">
 section {
-    @apply flex flex-col gap-y-16;
+  @apply flex flex-col gap-y-16;
 }
 </style>

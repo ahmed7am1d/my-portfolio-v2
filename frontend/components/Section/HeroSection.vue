@@ -51,30 +51,30 @@ import SectionHeading from '~/components/Heading/SectionHeading.vue'
 
 <style scoped lang="scss">
 section {
-    @apply pt-10 lg:pt-0;
+  @apply pt-10 lg:pt-0;
 
-    .hero-info {
-        @apply flex flex-col gap-y-2.5 items-center lg:items-start;
+  .hero-info {
+    @apply flex flex-col gap-y-2.5 items-center lg:items-start;
 
-        &__about {
-            @apply max-w-md text-gray text-lg items-center lg:items-start text-center lg:text-start;
-        }
+    &__about {
+      @apply max-w-md text-gray text-lg items-center lg:items-start text-center lg:text-start;
+    }
+  }
+
+  .hero-stats {
+    @apply flex flex-row gap-x-10 w-full mt-12 justify-center lg:justify-start;
+
+    &__item {
+      @apply flex flex-col items-center lg:items-start;
     }
 
-    .hero-stats {
-        @apply flex flex-row gap-x-10 w-full mt-12 justify-center lg:justify-start;
-
-        &__item {
-            @apply flex flex-col items-center lg:items-start;
-        }
-
-        span {
-            @apply text-black dark:text-white text-5xl sm:text-6xl md:text-7xl font-bold;
-        }
-
-        p {
-            @apply text-center lg:text-start text-gray w-full lg:w-1/2;
-        }
+    span {
+      @apply text-black dark:text-white text-5xl sm:text-6xl md:text-7xl font-bold;
     }
+
+    p {
+      @apply text-center lg:text-start text-gray w-full lg:w-1/2;
+    }
+  }
 }
 </style>

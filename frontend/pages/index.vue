@@ -1,9 +1,9 @@
 <script setup lang="ts">
 // Components
-import HeroSection from '~/components/Section/HeroSection.vue'
-import ExperienceSection from '~/components/Section/ExperienceSection.vue'
-import ProjectsSection from '~/components/Section/ProjectsSection.vue'
 import BlogsSection from '~/components/Section/BlogsSection.vue'
+import ExperienceSection from '~/components/Section/ExperienceSection.vue'
+import HeroSection from '~/components/Section/HeroSection.vue'
+import ProjectsSection from '~/components/Section/ProjectsSection.vue'
 </script>
 
 <template>

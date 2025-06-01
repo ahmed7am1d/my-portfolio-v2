@@ -6,9 +6,9 @@
     "experience": "الخبرات | الخبره",
     "tool": "الاداة | الادوات"
   },
-  "profileCard":{
+  "profileCard": {
     "name": "",
-    "bio" :"مهندس برمجيات فول ستاك, مستعد دائما اتعلم شغلات جديده وتقنيات جديده, خبره باستخدام VueJs/NuxtJs/ReactJs/NextJs في تطوير الواجهات الاماميه  (front-end) و .NET في تطوير الواجهات الخلفيه (back-end)"
+    "bio": "مهندس برمجيات فول ستاك, مستعد دائما اتعلم شغلات جديده وتقنيات جديده, خبره باستخدام VueJs/NuxtJs/ReactJs/NextJs في تطوير الواجهات الاماميه  (front-end) و .NET في تطوير الواجهات الخلفيه (back-end)"
   },
   "heroSection": {
     "heading": {
@@ -31,13 +31,13 @@
       }
     }
   },
-  "experienceSection":{
+  "experienceSection": {
     "heading": {
       "primary": "٣ سنه من",
       "secondary": "الخبره"
     }
   },
-  "projectsSection":{
+  "projectsSection": {
     "heading": {
       "primary": "المشاريع",
       "secondary": "الاخيره"

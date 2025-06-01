@@ -65,47 +65,47 @@ const socialmediaNavItems = computed(() => [
 
 <style lang="scss">
 .profile-card {
-    @apply h-[650px] w-full bg-white rounded-xl flex flex-col justify-start items-center py-6 px-7 text-center;
+  @apply h-[650px] w-full bg-white rounded-xl flex flex-col justify-start items-center py-6 px-7 text-center;
 
-    .profile-image {
-        @apply h-[284px] w-[240px] flex justify-center;
+  .profile-image {
+    @apply h-[284px] w-[240px] flex justify-center;
 
-        img {
-            @apply rounded-xl;
-        }
+    img {
+      @apply rounded-xl;
+    }
+  }
+
+  .profile-bio {
+    @apply mt-6 h-full flex flex-col justify-between;
+
+    &__name {
+      h4 {
+        @apply text-4xl uppercase font-bold;
+        font-family: 'Poppins', sans-serif;
+      }
     }
 
-    .profile-bio {
-        @apply mt-6 h-full flex flex-col justify-between;
+    &__description-icon {
+      @apply flex flex-col gap-y-7 max-w-80;
 
-        &__name {
-            h4 {
-                @apply text-4xl uppercase font-bold;
-                font-family: "Poppins", sans-serif;
-            }
+      // Description
+      p {
+        @apply text-dark-gray font-medium;
+      }
+
+      // Icons wrapper (navigation)
+      ul {
+        @apply flex justify-center gap-x-4;
+
+        li {
+          @apply hover:cursor-pointer;
+
+          .nuxt-icon svg {
+            @apply text-primary w-5 h-5;
+          }
         }
-
-        &__description-icon {
-            @apply flex flex-col gap-y-7 max-w-80;
-
-            // Description
-            p {
-                @apply text-dark-gray font-medium;
-            }
-
-            // Icons wrapper (navigation)
-            ul {
-                @apply flex justify-center gap-x-4;
-
-                li {
-                    @apply hover:cursor-pointer;
-
-                    .nuxt-icon svg {
-                        @apply text-primary w-5 h-5;
-                    }
-                }
-            }
-        }
+      }
     }
+  }
 }
 </style>

@@ -34,7 +34,8 @@ const { locale } = useI18n()
       :to="experience.url"
       rel="noopener"
       target="_blank"
-      :class="['arrow-nav', locale === 'ar-IQ' ? 'left-0' : 'right-0']"
+      class="arrow-nav"
+      :class="[locale === 'ar-IQ' ? 'left-0' : 'right-0']"
     >
       <span>➤</span>
     </NuxtLink>
@@ -42,7 +43,7 @@ const { locale } = useI18n()
 </template>
 
 <style scoped lang="scss">
-.experience-card{
+.experience-card {
   @apply flex flex-col gap-y-5 relative;
 
   &__details {

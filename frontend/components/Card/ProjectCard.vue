@@ -31,7 +31,8 @@ const { locale } = useI18n()
       :to="project.projectLink"
       rel="noopener"
       target="_blank"
-      :class="['arrow-nav', locale === 'ar-IQ' ? 'left-0' : 'right-0']"
+      class="arrow-nav"
+      :class="[locale === 'ar-IQ' ? 'left-0' : 'right-0']"
     >
       <span>➤</span>
     </NuxtLink>
@@ -40,30 +41,30 @@ const { locale } = useI18n()
 
 <style scoped lang="scss">
 .project-card {
-    @apply flex flex-row items-center gap-x-5 h-36 relative;
+  @apply flex flex-row items-center gap-x-5 h-36 relative;
 
-    &__image-container {
-        @apply h-fit w-fit border-primary border rounded-md;
+  &__image-container {
+    @apply h-fit w-fit border-primary border rounded-md;
 
-        img {
-            @apply min-h-40 max-h-44 min-w-20 max-w-36 object-cover pt-2 px-2 bg-primary;
-        }
+    img {
+      @apply min-h-40 max-h-44 min-w-20 max-w-36 object-cover pt-2 px-2 bg-primary;
+    }
+  }
+
+  &__about-container {
+    @apply flex flex-col justify-center overflow-hidden;
+
+    h3 {
+      @apply dark:text-white text-black text-3xl truncate; // Truncate for long titles
     }
 
-    &__about-container {
-        @apply flex flex-col justify-center overflow-hidden;
-
-        h3 {
-            @apply dark:text-white text-black text-3xl truncate; // Truncate for long titles
-        }
-
-        p {
-            @apply text-gray text-lg line-clamp-3; // 3 lines only
-        }
+    p {
+      @apply text-gray text-lg line-clamp-3; // 3 lines only
     }
+  }
 
-    .arrow-nav {
-        @apply absolute text-primary -rotate-45 hover:cursor-pointer top-0;
-    }
+  .arrow-nav {
+    @apply absolute text-primary -rotate-45 hover:cursor-pointer top-0;
+  }
 }
 </style>

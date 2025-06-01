@@ -2,9 +2,9 @@
 // Types
 import type { Experience } from '~/libs/App/types/sanity.types'
 
+import ExperienceCard from '~/components/Card/ExperienceCard.vue'
 // Components
 import SectionHeading from '~/components/Heading/SectionHeading.vue'
-import ExperienceCard from '~/components/Card/ExperienceCard.vue'
 
 // Utils
 const { locale } = useI18n()

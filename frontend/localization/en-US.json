@@ -6,20 +6,20 @@
     "experience": "Experience | Experiences",
     "tool": "Tool | Tools"
   },
-  "profileCard":{
+  "profileCard": {
     "name": "",
-    "bio" :"A dedicated full stack software engineer, who is always willing to learn new stuff, and try new things experienced in .NET for back-end development and NuxtJs/ReactJs for front-end development."
+    "bio": "A dedicated full stack software engineer, who is always willing to learn new stuff, and try new things experienced in .NET for back-end development and NuxtJs/ReactJs for front-end development."
   },
   "heroSection": {
     "heading": {
       "software": "Software",
       "engineer": "Engineer"
     },
-    "bio":"Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.",
+    "bio": "Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.",
     "stats": {
       "yearsOfExp": {
         "number": "+3",
-        "title" : "YEARS OF EXPEREINCE"
+        "title": "YEARS OF EXPEREINCE"
       },
       "projectsCompleted": {
         "number": "+7",
@@ -31,13 +31,13 @@
       }
     }
   },
-  "experienceSection":{
+  "experienceSection": {
     "heading": {
       "primary": "3 YEARS OF",
       "secondary": "EXPERIENCE"
     }
   },
-  "projectsSection":{
+  "projectsSection": {
     "heading": {
       "primary": "RECENT",
       "secondary": "PROJECTS"

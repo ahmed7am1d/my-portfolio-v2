@@ -3,8 +3,8 @@
 import type { Project } from '~/libs/App/types/sanity.types'
 
 // Components
-import SectionHeading from '~/components/Heading/SectionHeading.vue'
 import ProjectCard from '~/components/Card/ProjectCard.vue'
+import SectionHeading from '~/components/Heading/SectionHeading.vue'
 
 // Utils
 const { locale } = useI18n()
@@ -16,7 +16,7 @@ const projectItemsData = ref<Project[]>()
 const query = groq`*[_type == "project" && language == "${locale.value}"]`
 
 try {
-  const { data, refresh, error } = await useSanityQuery<Project[]>(query)
+  const { data } = await useSanityQuery<Project[]>(query)
   projectItemsData.value = data.value || []
 }
 catch (error) {
@@ -43,6 +43,6 @@ catch (error) {
 
 <style scoped lang="scss">
 section {
-    @apply flex flex-col gap-y-16;
+  @apply flex flex-col gap-y-16;
 }
 </style>
