@@ -7,10 +7,16 @@ type IProp = {
 }
 
 defineProps<IProp>()
+
+// Utils
+const { locale } = useI18n()
 </script>
 
 <template>
-  <div class="job-card">
+  <div
+    dir="auto"
+    class="job-card"
+  >
     <!-- Details (Title + Description) -->
     <div class="job-card__details">
       <!-- Title -->
@@ -27,9 +33,14 @@ defineProps<IProp>()
     </div>
 
     <!-- Arrow -->
-    <div class="arrow-nav">
+    <NuxtLink
+      rel="noopener"
+      target="_blank"
+      class="arrow-nav"
+      :class="[locale === 'ar-IQ' ? 'left-0' : 'right-0']"
+    >
       <span>➤</span>
-    </div>
+    </NuxtLink>
   </div>
 </template>
 
@@ -50,7 +61,7 @@ defineProps<IProp>()
   }
 
   .arrow-nav {
-    @apply absolute text-primary right-0 -rotate-45 hover:cursor-pointer;
+    @apply absolute text-primary  -rotate-45 hover:cursor-pointer;
   }
 }
 </style>
