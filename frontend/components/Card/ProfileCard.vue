@@ -5,21 +5,21 @@ const socialmediaNavItems = computed(() => [
   {
     id: 1,
     iconPath: 'linkedin',
-    to: '',
+    to: 'https://www.linkedin.com/in/al-doori/',
   },
 
   // Github
   {
     id: 2,
     iconPath: 'github',
-    to: '',
+    to: 'https://github.com/ahmed7am1d',
   },
 
   // Instagram
   {
     id: 3,
     iconPath: 'instagram',
-    to: '',
+    to: 'https://www.instagram.com/thefit.dev/',
   },
 ])
 </script>
@@ -49,7 +49,10 @@ const socialmediaNavItems = computed(() => [
             v-for="navItem in socialmediaNavItems"
             :key="navItem.id"
           >
-            <NuxtLink :to="navItem.to">
+            <NuxtLink
+              :to="navItem.to"
+              target="_blank"
+            >
               <nuxt-icon
                 :name="navItem.iconPath"
                 filled
