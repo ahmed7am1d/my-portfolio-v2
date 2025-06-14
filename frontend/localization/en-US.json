@@ -49,5 +49,8 @@
       "secondary": "BLOGS"
     }
   },
+  "blogCard": {
+    "minRead": "min read"
+  },
   "welcome": "Welcome"
 }

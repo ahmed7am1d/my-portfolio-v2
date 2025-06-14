@@ -22,6 +22,9 @@ const { locale } = useI18n()
       <!-- Title -->
       <h3>{{ experience.title }}</h3>
 
+      <!-- Comapany -->
+      <h5>{{ experience.company }}</h5>
+
       <!-- Description -->
       <p>{{ experience.description }}</p>
     </div>
@@ -52,6 +55,10 @@ const { locale } = useI18n()
 
   h3 {
     @apply dark:text-white text-black text-3xl;
+  }
+
+  h5 {
+    @apply dark:text-white/60 text-black/80 text-xl;
   }
 
   p {

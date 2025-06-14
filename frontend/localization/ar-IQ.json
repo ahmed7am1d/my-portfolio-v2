@@ -49,5 +49,8 @@
       "secondary": "الاخيره"
     }
   },
+  "blogCard": {
+    "minRead": "دقائق للقراءه"
+  },
   "welcome": "مرحبا"
 }

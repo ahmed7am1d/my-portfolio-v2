@@ -10,6 +10,11 @@ defineProps<IProp>()
 
 // Utils
 const { locale } = useI18n()
+
+// Functions
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString('en-CA')
+}
 </script>
 
 <template>
@@ -28,8 +33,8 @@ const { locale } = useI18n()
 
     <!-- Time posted and time to read -->
     <div class="w-full flex justify-between">
-      <p>{{ blog.publishedAt }}</p>
-      <p>{{ blog.readingTime }}</p>
+      <p>{{ formatDate(blog.publishedAt!) }}</p>
+      <p>{{ blog.readingTime }} {{ $t('blogCard.minRead') }}</p>
     </div>
 
     <!-- Arrow -->
