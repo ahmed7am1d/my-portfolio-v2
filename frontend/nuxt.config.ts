@@ -12,6 +12,14 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
   ],
   devtools: { enabled: true },
+  // App
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ],
+    },
+  },
 
   // CSS
   css: ['~/assets/css/main.scss', '~/assets/css/theme.scss'],
