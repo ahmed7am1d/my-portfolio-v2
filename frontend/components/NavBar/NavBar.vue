@@ -14,7 +14,7 @@ const navigationItems = computed<INavigationItem[]>(() => [
     textToDisplay: 'Home',
     translationKey: 'nav.home',
     translationKeyPosition: 1,
-    to: '',
+    to: '/',
   },
 
   // Projects
@@ -24,7 +24,7 @@ const navigationItems = computed<INavigationItem[]>(() => [
     textToDisplay: 'Projects',
     translationKey: 'nav.project',
     translationKeyPosition: 2,
-    to: '',
+    to: 'projects',
   },
 
   // Blogs
@@ -34,7 +34,7 @@ const navigationItems = computed<INavigationItem[]>(() => [
     textToDisplay: 'Blogs',
     translationKey: 'nav.blog',
     translationKeyPosition: 2,
-    to: '',
+    to: 'blogs',
   },
 
   // Experience | work
@@ -44,7 +44,7 @@ const navigationItems = computed<INavigationItem[]>(() => [
     textToDisplay: 'Experience',
     translationKey: 'nav.experience',
     translationKeyPosition: 1,
-    to: '',
+    to: 'experiences',
   },
 
   // Tools
