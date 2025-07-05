@@ -10,6 +10,7 @@ defineProps<IProp>()
 
 // Utils
 const { locale } = useI18n()
+const localePath = useLocalePath()
 
 // Functions
 function formatDate(date: string) {
@@ -39,8 +40,7 @@ function formatDate(date: string) {
 
     <!-- Arrow -->
     <NuxtLink
-      rel="noopener"
-      target="_blank"
+      :to="`${localePath(`/blogs/${blog.slug?.current}`)}`"
       class="arrow-nav"
       :class="[locale === 'ar-IQ' ? 'left-0' : 'right-0']"
     >

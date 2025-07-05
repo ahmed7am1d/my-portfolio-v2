@@ -4,6 +4,7 @@ import type { INavigationItem } from './types/navbar.type'
 
 // Utils
 const { setLocale, locale: i18nLocale } = useI18n()
+const localePath = useLocalePath()
 
 // Layout
 const navigationItems = computed<INavigationItem[]>(() => [
@@ -71,6 +72,10 @@ function getLocaleClass(locale: 'EN' | 'AR') {
 
   return isActive ? 'is-active-locale' : ''
 }
+
+function getLocalizedPath(path: string) {
+  return localePath(path)
+}
 </script>
 
 <template>
@@ -82,7 +87,7 @@ function getLocaleClass(locale: 'EN' | 'AR') {
         role="none"
       >
         <NuxtLink
-          :to="navItem.to"
+          :to="getLocalizedPath(navItem.to)"
           role="menuitem"
           :aria-label="$t(navItem.translationKey)"
         >
