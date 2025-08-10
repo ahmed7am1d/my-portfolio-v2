@@ -29,6 +29,8 @@ export default defineNuxtConfig({
     classSuffix: '',
     preference: 'system',
     fallback: 'dark',
+    storage: 'localStorage',
+    storageKey: 'color-mode',
   },
   compatibilityDate: '2024-04-03',
 
@@ -63,6 +65,12 @@ export default defineNuxtConfig({
     vueI18n: './localization/i18n.config.ts',
     locales: LOCALES,
     defaultLocale: LOCALE_DEFAULT,
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+    },
   },
 
   // Sanity

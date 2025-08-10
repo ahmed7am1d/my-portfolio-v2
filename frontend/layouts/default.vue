@@ -7,7 +7,7 @@ const colorMode = useColorMode()
 
 // Functions
 function handleToggleTheme() {
-  colorMode.value = colorMode.value === 'light' ? 'dark' : 'light'
+  colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark'
 }
 </script>
 
