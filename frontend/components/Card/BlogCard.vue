@@ -16,6 +16,11 @@ const localePath = useLocalePath()
 function formatDate(date: string) {
   return new Date(date).toLocaleDateString('en-CA')
 }
+
+function getLocalePath(slug: string) {
+  const path = localePath(`/blogs/${slug}`)
+  return path
+}
 </script>
 
 <template>
@@ -40,7 +45,7 @@ function formatDate(date: string) {
 
     <!-- Arrow -->
     <NuxtLink
-      :to="`${localePath(`/blogs/${blog.slug?.current}`)}`"
+      :to="getLocalePath(blog.slug?.current as string)"
       class="arrow-nav"
       :class="[locale === 'ar-IQ' ? 'left-0' : 'right-0']"
     >

@@ -1,54 +1,236 @@
 <script setup lang="ts">
-// Types
-import type { Blog } from '~/libs/App/types/sanity.types'
+import type { BlogDetailQueryResponse } from '~/libs/Blogs/types/api.types'
 
 // Utils
-const { locale } = useI18n()
 const route = useRoute()
+const { locale } = useI18n()
+const setI18nParams = useSetI18nParams()
 
 // Layout
-const slug = route.params.slug as string
-const blogDetails = ref<Blog>()
+const slug = computed(() => route.params.slug as string)
+const blogDetails = computed(() => queryResult.value?.blog)
+const localeVersions = computed(() => queryResult.value?.localeVersions || [])
 
-// Data fetching
-const query = groq`*[_type == "blog" && slug.current == "${slug}" && language == "${locale.value}"][0]{
-  _id,
-  title,
-  excerpt,
-  content,
-  publishedAt,
-  readingTime,
-  slug,
-  language,
-  author->{
-    name,
-    bio,
-    image
+const serializers = {
+  types: {
+    // Image
+    image: (value: any) => {
+      const { key, alt, url, height, width, caption } = value
+
+      if (!url) {
+        console.error('Image value is null/undefined')
+        return h('div', { class: 'error' }, 'Image data missing')
+      }
+
+      return h('img', {
+        key,
+        src: url,
+        alt: alt || caption || 'Image',
+        width,
+        height,
+        loading: 'lazy',
+      })
+    },
   },
-  mainImage{
-    asset->{
-      url,
-      alt
+}
+
+// Queries and data fetching
+const query = groq`{
+  "blog": *[_type == "blog" && slug.current == $slug && language == $lang][0]{
+    _id,
+    title,
+    sharedId,
+    excerpt,
+    content[]{
+      ...,
+      // Expand image blocks and extract URL to top level
+      _type == "image" => {
+        ...,
+        asset->{
+          _id,
+          altText,
+          originalFilename,
+          metadata {
+            dimensions {
+              width,
+              height,
+              aspectRatio
+            },
+            lqip,
+            blurHash
+          }
+        },
+        // Extract URL outside of asset for SanityContent
+        "url": asset->url,
+        "width": asset->metadata.dimensions.width,
+        "height": asset->metadata.dimensions.height
+      },
+      // Handle other block types normally
+      _type == "block" => {
+        ...,
+        children[]{
+          ...,
+          // Expand any inline images in marks if you have them
+          _type == "image" => {
+            ...,
+            asset->{
+              altText
+            },
+            "url": asset->url
+          }
+        }
+      }
+    },
+    publishedAt,
+    readingTime,
+    slug,
+    language,
+    author->{
+      name,
+      bio,
+      image{
+        asset->{
+          url,
+          altText,
+          metadata {
+            dimensions {
+              width,
+              height
+            }
+          }
+        }
+      }
+    },
+    mainImage{
+      asset->{
+        url,
+        altText,
+        metadata {
+          dimensions {
+            width,
+            height
+          },
+          lqip
+        }
+      },
+      alt,
+      hotspot,
+      crop
+    },
+    categories[]->{
+      _id,
+      title,
+      slug
     }
   },
-  categories[]->{
-    title,
-    slug
+  "localeVersions": *[_type == "blog" && sharedId == *[_type == "blog" && slug.current == $slug && language == $lang][0].sharedId]{
+    language,
+    "slug": slug.current,
+    sharedId
   }
 }`
 
-try {
-  const { data } = await useSanityQuery<Blog>(query)
-  blogDetails.value = data.value || undefined
-  console.log('blog details: ', data)
+const { data: queryResult, status, error, refresh } = await useSanityQuery<BlogDetailQueryResponse>(query, ({
+  slug: slug.value,
+  lang: locale.value,
+}))
+
+// Functions
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString('en-CA')
 }
-catch (error) {
-  console.error('Error fetching data:', error)
-}
+
+setI18nParams({
+  'en-US': { slug: localeVersions.value.find(lv => lv.language === 'en-US')?.slug },
+  'ar-IQ': { slug: localeVersions.value.find(lv => lv.language === 'ar-IQ')?.slug },
+})
+
+useSeoMeta({
+  title: () => blogDetails.value?.title || 'Blog',
+  description: () => blogDetails.value?.excerpt || 'Blog details page',
+})
 </script>
 
 <template>
-  <div>
-    {{ blogDetails?.title }}
+  <div class="blog-details-page-wrapper">
+    <div
+      v-if="status === 'success'"
+      class="dark:color-white"
+    >
+      <!-- Image -->
+      <NuxtImg
+        :src="blogDetails?.mainImage?.asset?.url"
+        sizes="100vw"
+      />
+
+      <!-- Blog info -->
+      <div class="blog-details-page-wrapper__blog-info">
+        <!-- Date of posting -->
+        <p>{{ formatDate(blogDetails?.publishedAt!) }}</p>
+
+        <!-- Time to read -->
+        <p>{{ blogDetails?.readingTime }} {{ $t('blogCard.minRead') }}</p>
+      </div>
+
+      <!-- Header (Title) -->
+      <h1>
+        {{ blogDetails?.title }}
+      </h1>
+
+      <!-- Content -->
+      <div class="blog-details-page-wrapper__content">
+        <SanityContent
+          :blocks="blogDetails?.content"
+          :serializers="serializers"
+        />
+      </div>
+    </div>
+
+    <div v-else-if="status === 'pending'">
+      Loading...
+    </div>
+
+    <div v-else-if="status === 'error'">
+      Error loading blog post
+    </div>
   </div>
 </template>
+
+<style scoped lang="scss">
+.blog-details-page-wrapper {
+  @apply dark:text-white;
+
+  img {
+    @apply mt-4 lg:mt-0;
+  }
+
+  // Date and reading time
+  &__blog-info {
+    @apply flex justify-between items-center text-gray text-lg mt-4;
+  }
+
+  // Header (Title)
+  h1 {
+    @apply mb-4;
+  }
+
+  // Content
+  .blog-details-page-wrapper__content {
+    // Headings
+    :deep(h2),
+    :deep(h3),
+    :deep(h4) {
+      @apply mb-4 mt-6;
+    }
+
+    :deep(p) {
+      @apply text-gray text-lg;
+    }
+  }
+}
+
+.debug-info {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+</style>

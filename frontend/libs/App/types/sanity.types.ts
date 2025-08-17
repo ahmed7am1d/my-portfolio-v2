@@ -122,6 +122,7 @@ export type Blog = {
   _updatedAt: string
   _rev: string
   title?: string
+  sharedId?: string
   slug?: Slug
   publishedAt?: string
   excerpt?: string
