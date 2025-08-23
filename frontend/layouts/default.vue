@@ -42,7 +42,8 @@ function handleToggleTheme() {
       <div class="content-container">
         <div class="content-grid">
           <!-- Profile card (fixed for all pages) -->
-          <aside>
+          <slot name="aside" />
+          <aside v-if="!$slots.aside">
             <ProfileCard />
           </aside>
 

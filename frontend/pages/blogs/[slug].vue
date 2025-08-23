@@ -1,5 +1,9 @@
 <script setup lang="ts">
+// Types
 import type { BlogDetailQueryResponse } from '~/libs/Blogs/types/api.types'
+
+// Components
+import ProfileCard from '~/components/Card/ProfileCard.vue'
 
 // Utils
 const route = useRoute()
@@ -145,6 +149,10 @@ setI18nParams({
   'ar-IQ': { slug: localeVersions.value.find(lv => lv.language === 'ar-IQ')?.slug },
 })
 
+definePageMeta({
+  layout: false,
+})
+
 useSeoMeta({
   title: () => blogDetails.value?.title || 'Blog',
   description: () => blogDetails.value?.excerpt || 'Blog details page',
@@ -152,51 +160,63 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="blog-details-page-wrapper">
-    <div
-      v-if="status === 'success'"
-      class="dark:color-white"
-    >
-      <!-- Image -->
-      <NuxtImg
-        :src="blogDetails?.mainImage?.asset?.url"
-        sizes="100vw"
-      />
+  <NuxtLayout name="default">
+    <template #aside>
+      <aside>
+        <ProfileCard />
+      </aside>
+    </template>
 
-      <!-- Blog info -->
-      <div class="blog-details-page-wrapper__blog-info">
-        <!-- Date of posting -->
-        <p>{{ formatDate(blogDetails?.publishedAt!) }}</p>
-
-        <!-- Time to read -->
-        <p>{{ blogDetails?.readingTime }} {{ $t('blogCard.minRead') }}</p>
-      </div>
-
-      <!-- Header (Title) -->
-      <h1>
-        {{ blogDetails?.title }}
-      </h1>
-
-      <!-- Content -->
-      <div class="blog-details-page-wrapper__content">
-        <SanityContent
-          :blocks="blogDetails?.content"
-          :serializers="serializers"
+    <div class="blog-details-page-wrapper">
+      <div
+        v-if="status === 'success'"
+        class="dark:color-white"
+      >
+        <!-- Image -->
+        <NuxtImg
+          :src="blogDetails?.mainImage?.asset?.url"
+          sizes="100vw"
         />
+
+        <!-- Blog info -->
+        <div class="blog-details-page-wrapper__blog-info">
+          <!-- Date of posting -->
+          <p>{{ formatDate(blogDetails?.publishedAt!) }}</p>
+
+          <!-- Time to read -->
+          <p>{{ blogDetails?.readingTime }} {{ $t('blogCard.minRead') }}</p>
+        </div>
+
+        <!-- Header (Title) -->
+        <h1>
+          {{ blogDetails?.title }}
+        </h1>
+
+        <!-- Content -->
+        <div class="blog-details-page-wrapper__content">
+          <SanityContent
+            :blocks="blogDetails?.content"
+            :serializers="serializers"
+          />
+        </div>
+      </div>
+
+      <div v-else-if="status === 'pending'">
+        Loading...
+      </div>
+
+      <div v-else-if="status === 'error'">
+        Error loading blog post
       </div>
     </div>
-
-    <div v-else-if="status === 'pending'">
-      Loading...
-    </div>
-
-    <div v-else-if="status === 'error'">
-      Error loading blog post
-    </div>
-  </div>
+  </NuxtLayout>
 </template>
 
 <style scoped lang="scss">
+  aside {
+  @apply hidden lg:block;
+}
+
 .blog-details-page-wrapper {
   @apply dark:text-white;
 
@@ -227,10 +247,5 @@ useSeoMeta({
       @apply text-gray text-lg;
     }
   }
-}
-
-.debug-info {
-  border: 1px solid #ccc;
-  border-radius: 4px;
 }
 </style>
