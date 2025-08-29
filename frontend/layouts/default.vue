@@ -65,7 +65,7 @@ function handleToggleTheme() {
 
 <style lang="scss">
 .app-layout {
-  @apply w-full min-h-full h-full dark:bg-theme-dark bg-theme-light;
+  @apply w-full min-h-full h-full;
 
   .app-header {
     @apply relative;
