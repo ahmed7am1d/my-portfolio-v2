@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // Components
 import ProfileCard from '~/components/Card/ProfileCard.vue'
+import NavBar from '~/components/NavBar/NavBar.vue'
 
 // Utils
 const colorMode = useColorMode()
