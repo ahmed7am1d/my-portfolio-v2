@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // Components
 import SectionHeading from '~/components/Heading/SectionHeading.vue'
+import AnimatedNumber from '../AnimatedNumber.vue'
 </script>
 
 <template>
@@ -26,19 +27,28 @@ import SectionHeading from '~/components/Heading/SectionHeading.vue'
       class="hero-stats"
     >
       <div class="hero-stats__item">
-        <span>{{ $t('heroSection.stats.yearsOfExp.number') }}</span>
+        <AnimatedNumber
+          :value="$t('heroSection.stats.yearsOfExp.number')"
+          :duration="1000"
+        />
 
         <p>{{ $t('heroSection.stats.yearsOfExp.title') }}</p>
       </div>
 
       <div class="hero-stats__item">
-        <span>{{ $t('heroSection.stats.projectsCompleted.number') }}</span>
+        <AnimatedNumber
+          :value="$t('heroSection.stats.projectsCompleted.number')"
+          :duration="1000"
+        />
 
         <p>{{ $t('heroSection.stats.projectsCompleted.title') }}</p>
       </div>
 
       <div class="hero-stats__item">
-        <span>{{ $t('heroSection.stats.worldWorldClient.number') }}</span>
+        <AnimatedNumber
+          :value="$t('heroSection.stats.worldWorldClient.number')"
+          :duration="1000"
+        />
 
         <p>{{ $t('heroSection.stats.worldWorldClient.title') }}</p>
       </div>
