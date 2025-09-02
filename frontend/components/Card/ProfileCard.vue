@@ -99,7 +99,12 @@ const socialmediaNavItems = computed(() => [
     }
 
     .accent-element {
-      @apply absolute w-full left-8 top-10;
+      @apply absolute w-full left-8 -top-12;
+
+      // RTL - line extends to the right
+      [dir='rtl'] & {
+        @apply right-60 left-auto;
+      }
 
       .accent-circle {
         @apply w-9 h-9 bg-primary rounded-full;

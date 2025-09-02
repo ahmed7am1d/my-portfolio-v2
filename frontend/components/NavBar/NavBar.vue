@@ -55,7 +55,7 @@ const navigationItems = computed<INavigationItem[]>(() => [
     textToDisplay: 'Tools',
     translationKey: 'nav.tool',
     translationKeyPosition: 2,
-    to: '',
+    to: 'tools',
   },
 ])
 
@@ -147,6 +147,12 @@ nav {
         @apply select-none invisible opacity-0 absolute w-fit rounded-lg dark:bg-nav-item-tooltip-dark bg-nav-item-tooltip-light px-2 text-center -translate-x-1/2 left-1/2 bottom-0 transition-all duration-500 ease-in-out;
         pointer-events: none;
         white-space: nowrap;
+      }
+
+      a.router-link-active {
+        .nuxt-icon svg {
+          @apply text-primary;
+        }
       }
 
       &:hover {
