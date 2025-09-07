@@ -49,7 +49,7 @@ function handleToggleTheme() {
           </aside>
 
           <!-- Dynamic content section -->
-          <article>
+          <article class="content-container__dynamic-content-wrapper">
             <slot />
           </article>
         </div>
@@ -152,6 +152,10 @@ function handleToggleTheme() {
         article {
           @apply col-span-7;
         }
+      }
+
+      &__dynamic-content-wrapper {
+        @apply pt-10 lg:pt-0;
       }
     }
   }

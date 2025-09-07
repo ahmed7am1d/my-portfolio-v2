@@ -61,8 +61,6 @@ import AnimatedNumber from '../AnimatedNumber.vue'
 
 <style scoped lang="scss">
 section {
-  @apply pt-10 lg:pt-0;
-
   .hero-info {
     @apply flex flex-col gap-y-2.5 items-center lg:items-start;
 
