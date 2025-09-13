@@ -96,7 +96,7 @@ function handleToggleTheme() {
 
     &__dark-light-wrapper {
       /* Position the wrapper fixed on screen */
-      @apply fixed right-4 z-10 select-none;
+      @apply fixed right-4 z-10 select-none h-fit;
 
       /* Desktop positioning at top */
       @apply top-4 bottom-0;
