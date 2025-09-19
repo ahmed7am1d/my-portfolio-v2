@@ -71,6 +71,7 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',
     },
+    baseUrl: 'https://aldooriahmed.com',
   },
 
   // Sanity

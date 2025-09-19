@@ -4,6 +4,19 @@ import BlogsSection from '~/components/Section/BlogsSection.vue'
 import ExperienceSection from '~/components/Section/ExperienceSection.vue'
 import HeroSection from '~/components/Section/HeroSection.vue'
 import ProjectsSection from '~/components/Section/ProjectsSection.vue'
+
+// Utils
+const { t } = useI18n()
+
+useSeoMeta({
+  title: t('seo.pages.home.title'),
+  description: t('seo.pages.home.description'),
+  author: t('seo.site.author'),
+
+  // Open graph (Social media)
+  ogTitle: t('seo.pages.home.ogTitle'),
+  ogDescription: t('seo.pages.home.ogDescription'),
+})
 </script>
 
 <template>
