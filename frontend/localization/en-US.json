@@ -1,4 +1,45 @@
 {
+  "seo": {
+    "site": {
+      "name": "Ahmed Al-Doori - Full Stack Developer",
+      "author": "Ahmed Al-Doori",
+      "url": "https://www.aldooriahmed.com"
+    },
+    "pages": {
+      "home": {
+        "title": "Ahmed Al-Doori - Full Stack .NET/NuxtJs Developer & Software Engineer",
+        "description": "Experienced Full Stack Software Engineer specializing in .NET Core, NuxtJS, ReactJS, and Azure DevOps. 3+ years building scalable web applications and transitioning into cybersecurity. Available for freelance projects.",
+        "keywords": "",
+        "ogTitle": "Ahmed Al-Doori - Full Stack .NET Developer & Cybersecurity Enthusiast",
+        "ogDescription": "Experienced Software Engineer with 3+ years in full stack development. Specializing in .NET, NuxtJS, and transitioning into Pentesting/Red teaming."
+      },
+      "projects": {
+        "title": "Software Development Projects - .NET, NuxtJS & Full Stack Solutions",
+        "description": "Explore Ahmed Al-Doori's portfolio of software development projects including .NET applications, NuxtJS websites, and full stack solutions.",
+        "ogTitle": "Ahmed Al-Doori's Development Projects",
+        "ogDescription": "Portfolio showcasing innovative software solutions built with .NET, NuxtJS, and modern web technologies."
+      },
+      "blogs": {
+        "title": "Software Development Blog - .NET, NuxtJS & Tech Insights",
+        "description": "Technical blog by Ahmed Al-Doori covering .NET development, NuxtJS tutorials, cybersecurity insights, and software engineering best practices.",
+        "ogTitle": "Ahmed Al-Doori's Tech Blog",
+        "ogDescription": "In-depth articles on software development, cybersecurity, and modern web technologies."
+      },
+      "experience": {
+        "title": "Professional Experience",
+        "description": "Ahmed Al-Doori's professional experience including roles at Continental, Business Logic, and Backstage Technology. 3+ years of full stack development.",
+        "ogTitle": "Ahmed Al-Doori's Professional Experience",
+        "ogDescription": "Professional journey spanning multiple international companies and diverse technology stacks."
+      },
+      "tools": {
+        "title": "",
+        "description": "",
+        "keywords": "",
+        "ogTitle": "",
+        "ogDescription": ""
+      }
+    }
+  },
   "nav": {
     "home": "Home | Home",
     "project": "Project | Projects",
