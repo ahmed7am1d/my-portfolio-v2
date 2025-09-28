@@ -220,6 +220,7 @@ export type Project = {
     }
     hotspot?: SanityImageHotspot
     crop?: SanityImageCrop
+    alt?: string
     _type: 'image'
   }
   projectLink?: string

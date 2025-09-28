@@ -28,7 +28,11 @@ const socialmediaNavItems = computed(() => [
   <article class="profile-card">
     <!-- Profile image -->
     <div class="profile-image">
-      <NuxtImg src="/profile-card.png" />
+      <NuxtImg
+        src="/profile-card.png"
+        alt="Ahmed Al-Doori – Full-Stack Developer Profile Photo"
+        title="Ahmed Al-Doori – Experienced Full-Stack Developer"
+      />
     </div>
 
     <!-- Profile bio -->
