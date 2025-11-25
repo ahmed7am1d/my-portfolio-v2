@@ -17,6 +17,8 @@
     "@nuxt/fonts": "^0.10.2",
     "@nuxt/image": "^1.8.1",
     "@nuxtjs/sanity": "^1.13.3",
+    "@nuxtjs/seo": "^3.2.2",
+    "@nuxtjs/sitemap": "^7.4.7",
     "@sanity/client": "^6.29.1",
     "eslint": "^9.0.0",
     "nuxt": "^3.13.2",

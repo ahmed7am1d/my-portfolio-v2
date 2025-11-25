@@ -10,6 +10,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/sanity',
     '@nuxt/eslint',
+    '@nuxtjs/seo',
+    '@nuxtjs/sitemap',
   ],
   devtools: { enabled: true },
   // App
@@ -24,6 +26,14 @@ export default defineNuxtConfig({
   // CSS
   css: ['~/assets/css/main.scss', '~/assets/css/theme.scss'],
 
+  // SEO
+  site: {
+    url: 'https://www.aldooriahmed.com',
+    name: 'Al-Doori Portfolio',
+    description: 'Ahmed Al-Doori - Full Stack Developer Portfolio',
+    defaultLocale: LOCALE_DEFAULT,
+  },
+
   // Dark/Light
   colorMode: {
     classSuffix: '',
@@ -32,6 +42,7 @@ export default defineNuxtConfig({
     storage: 'localStorage',
     storageKey: 'color-mode',
   },
+
   compatibilityDate: '2024-04-03',
 
   // Vite
@@ -71,7 +82,7 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',
     },
-    baseUrl: 'https://aldooriahmed.com',
+    baseUrl: 'https://www.aldooriahmed.com',
   },
 
   // Sanity
