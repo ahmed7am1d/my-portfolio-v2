@@ -90,4 +90,9 @@ export default defineNuxtConfig({
     projectId: process.env.SANITY_PROJECT_ID,
     dataset: 'production',
   },
+
+  // SEO
+  sitemap: {
+    sources: ['/api/__sitemap__/urls/blogs'],
+  },
 })
