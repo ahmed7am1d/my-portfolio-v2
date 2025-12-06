@@ -16,6 +16,7 @@ const { locale } = useI18n()
     <div class="project-card__image-container">
       <SanityImage
         :asset-id="project.image?.asset?._ref"
+        :alt="project.image?.alt"
         auto="format"
       />
     </div>
