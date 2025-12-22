@@ -213,7 +213,7 @@ useSeoMeta({
 </template>
 
 <style scoped lang="scss">
-  aside {
+aside {
   @apply hidden lg:block;
 }
 
@@ -245,6 +245,24 @@ useSeoMeta({
 
     :deep(p) {
       @apply text-gray text-lg;
+    }
+
+    // Ordered and unordered lists
+    :deep(ol),
+    :deep(ul) {
+      @apply pl-5 pt-3 text-gray marker:text-primary;
+
+      li {
+        @apply mb-2;
+      }
+    }
+
+    :deep(ol) {
+      list-style: decimal inside;
+    }
+
+    :deep(ul) {
+      list-style: square inside;
     }
   }
 }

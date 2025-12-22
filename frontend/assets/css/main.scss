@@ -55,12 +55,6 @@ h4 {
   @apply text-2xl font-bold;
 }
 
-// Lists
-ol {
-  list-style: decimal;
-  @apply pl-5 pt-3 text-gray marker:text-primary;
-}
-
 // Strong
 strong {
   @apply text-primary opacity-70;
