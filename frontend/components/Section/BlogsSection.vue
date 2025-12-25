@@ -13,7 +13,7 @@ const { locale } = useI18n()
 const blogItemsData = ref<Blog[]>()
 
 // Data fetching and setting
-const query = groq`*[_type == "blog" && language == "${locale.value}"]`
+const query = groq`*[_type == "blog" && language == "${locale.value}"] | order(dateTime(publishedAt) desc)`
 
 try {
   const { data } = await useSanityQuery<any[]>(query)
