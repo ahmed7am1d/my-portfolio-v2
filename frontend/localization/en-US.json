@@ -41,11 +41,11 @@
     }
   },
   "nav": {
-    "home": "Home | Home",
-    "project": "Project | Projects",
-    "blog": "Blog | Blogs",
-    "experience": "Experience | Experiences",
-    "tool": "Tool | Tools"
+    "home": "127.0.0.1",
+    "project": "Things I've Built",
+    "blog": "Things I've Learned",
+    "experience": "Where I've Worked",
+    "tool": "How I Work"
   },
   "profileCard": {
     "name": "",
