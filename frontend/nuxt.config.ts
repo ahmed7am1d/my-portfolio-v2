@@ -55,6 +55,14 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-04-03',
 
+  // Nitro
+  nitro: {
+    preset: 'vercel',
+    externals: {
+      inline: ['ohash'],
+    },
+  },
+
   // Vite
   vite: {
     css: {
@@ -70,13 +78,13 @@ export default defineNuxtConfig({
     },
   },
 
+  // PostCSS
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
-
   // Eslint
   eslint: {
     config: {
