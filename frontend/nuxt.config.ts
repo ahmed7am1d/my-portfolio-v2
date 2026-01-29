@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxtjs/seo',
     '@nuxtjs/sitemap',
+    'nuxt-shiki',
   ],
   devtools: { enabled: true },
   // App
@@ -43,6 +44,15 @@ export default defineNuxtConfig({
     storageKey: 'color-mode',
   },
 
+  // Runtime Config
+  runtimeConfig: {
+    public: {
+      i18n: {
+        locales: LOCALES,
+      },
+    },
+  },
+
   compatibilityDate: '2024-04-03',
 
   // Vite
@@ -53,6 +63,10 @@ export default defineNuxtConfig({
           api: 'modern-compiler',
         },
       },
+    },
+    // Needed for Sanity because it uses React internally
+    optimizeDeps: {
+      include: ['react-compiler-runtime', 'react', 'react-dom'],
     },
   },
 
@@ -89,6 +103,13 @@ export default defineNuxtConfig({
   sanity: {
     projectId: process.env.SANITY_PROJECT_ID,
     dataset: 'production',
+  },
+
+  // Shiki (Code Highlighting)
+  shiki: {
+    // Include all languages
+    bundledLangs: ['csharp', 'javascript', 'batch'],
+    defaultTheme: 'dark-plus',
   },
 
   // SEO

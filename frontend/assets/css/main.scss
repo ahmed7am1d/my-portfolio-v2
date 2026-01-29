@@ -59,3 +59,8 @@ h4 {
 strong {
   @apply text-primary opacity-70;
 }
+
+// Shiki code block overrides
+.shiki {
+  @apply rounded-lg overflow-hidden p-1;
+}

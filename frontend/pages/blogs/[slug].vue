@@ -35,6 +35,24 @@ const serializers = {
         loading: 'lazy',
       })
     },
+
+    // Code block (Shiki syntax highlighting)
+    code: (value: any) => {
+      let language;
+      switch (value.language){
+        case 'batchfile':
+          language = 'batch';
+          break;
+        default:
+          language = value.language;
+      }
+
+      return h(resolveComponent('Shiki'), {
+        code: value.code,
+        lang: language,
+        theme: 'dark-plus',
+      })
+    },
   },
 }
 
