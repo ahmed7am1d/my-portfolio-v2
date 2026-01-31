@@ -15,41 +15,40 @@ const slug = computed(() => route.params.slug as string)
 const blogDetails = computed(() => queryResult.value?.blog)
 const localeVersions = computed(() => queryResult.value?.localeVersions || [])
 
-const serializers = {
+const components = {
   types: {
-    // Image
-    image: (value: any) => {
-      const { key, alt, url, height, width, caption } = value
-
+    // Image - props.value contains the data now
+    image: (props: any) => {
+      const { _key, alt, url, height, width, caption } = props.value
+      
       if (!url) {
-        console.error('Image value is null/undefined')
+        console.error('Image value is null/undefined', props.value)
         return h('div', { class: 'error' }, 'Image data missing')
       }
 
       return h('img', {
-        key,
+        key: _key,
         src: url,
         alt: alt || caption || 'Image',
         width,
         height,
         loading: 'lazy',
+        class: 'my-4 rounded-lg w-full',
       })
     },
 
-    // Code block (Shiki syntax highlighting)
-    code: (value: any) => {
-      let language;
-      switch (value.language){
-        case 'batchfile':
-          language = 'batch';
-          break;
-        default:
-          language = value.language;
+    // Code block
+    code: (props: any) => {
+      const { language, code } = props.value
+      
+      let lang = language
+      if (language === 'batchfile') {
+        lang = 'batch'
       }
 
       return h(resolveComponent('Shiki'), {
-        code: value.code,
-        lang: language,
+        code: code,
+        lang: lang,
         theme: 'dark-plus',
       })
     },
@@ -213,8 +212,8 @@ useSeoMeta({
         <!-- Content -->
         <div class="blog-details-page-wrapper__content">
           <SanityContent
-            :blocks="blogDetails?.content"
-            :serializers="serializers"
+            :value="blogDetails?.content"
+            :components="components"
           />
         </div>
       </div>

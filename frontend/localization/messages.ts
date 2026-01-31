@@ -20,6 +20,7 @@ export const LOCALES: LocaleObject[] = [
     icon: 'i-emojione:flag-for-united-kingdom',
     dateFormat: 'MM/DD/YYYY',
     dir: 'ltr',
+    file: 'en-US.json',
   },
   {
     code: 'ar-IQ',
@@ -28,5 +29,6 @@ export const LOCALES: LocaleObject[] = [
     icon: 'i-emojione:flag-for-iraq',
     dateFormat: 'DD/MM/YYYY',
     dir: 'rtl',
+    file: 'ar-IQ.json',
   },
 ]

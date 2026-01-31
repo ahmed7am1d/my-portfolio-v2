@@ -27,6 +27,12 @@ export default defineNuxtConfig({
   // CSS
   css: ['~/assets/css/main.scss', '~/assets/css/theme.scss'],
 
+  // Image
+  image: {
+    sanity: {
+      projectId: process.env.SANITY_PROJECT_ID,
+    }
+  },
   // SEO
   site: {
     url: 'https://www.aldooriahmed.com',
@@ -105,12 +111,14 @@ export default defineNuxtConfig({
       redirectOn: 'root',
     },
     baseUrl: 'https://www.aldooriahmed.com',
+    langDir: '../localization',
   },
 
   // Sanity
   sanity: {
     projectId: process.env.SANITY_PROJECT_ID,
     dataset: 'production',
+    apiVersion: '2021-08-31'
   },
 
   // Shiki (Code Highlighting)
