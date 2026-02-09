@@ -19,7 +19,7 @@ const socialmediaNavItems = computed(() => [
   {
     id: 3,
     iconPath: 'instagram',
-    to: 'https://www.instagram.com/thefit.dev/',
+    to: 'https://www.instagram.com/aldooriahmedsec',
   },
 ])
 </script>
