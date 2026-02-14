@@ -20,7 +20,7 @@ const components = {
     // Image - props.value contains the data now
     image: (props: any) => {
       const { _key, alt, url, height, width, caption } = props.value
-      
+
       if (!url) {
         console.error('Image value is null/undefined', props.value)
         return h('div', { class: 'error' }, 'Image data missing')
@@ -40,15 +40,15 @@ const components = {
     // Code block
     code: (props: any) => {
       const { language, code } = props.value
-      
+
       let lang = language
       if (language === 'batchfile') {
         lang = 'batch'
       }
 
       return h(resolveComponent('Shiki'), {
-        code: code,
-        lang: lang,
+        code,
+        lang,
         theme: 'dark-plus',
       })
     },

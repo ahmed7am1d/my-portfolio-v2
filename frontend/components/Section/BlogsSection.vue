@@ -1,23 +1,23 @@
 <script setup lang="ts">
-// Components
-import BlogCard from '~/components/Card/BlogCard.vue'
-import SectionHeading from '~/components/Heading/SectionHeading.vue'
-
 // Types
 import type { Blog } from '~/libs/App/types/sanity.types'
+// Components
+import BlogCard from '~/components/Card/BlogCard.vue'
+
+import SectionHeading from '~/components/Heading/SectionHeading.vue'
 
 // Utils
 const { locale } = useI18n()
 
 // Layout
-const query = computed(() => 
-  groq`*[_type == "blog" && language == $lang] | order(dateTime(publishedAt) desc)`
+const query = computed(() =>
+  groq`*[_type == "blog" && language == $lang] | order(dateTime(publishedAt) desc)`,
 )
 
 // Data fetching
 const { data: blogItemsData } = await useAsyncData(
   `blogs-${locale.value}`,
-  () => useSanityQuery<Blog[]>(query.value, { lang: locale.value }).then(res => res.data.value)
+  () => useSanityQuery<Blog[]>(query.value, { lang: locale.value }).then(res => res.data.value),
 )
 </script>
 

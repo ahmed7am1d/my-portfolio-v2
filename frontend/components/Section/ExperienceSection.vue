@@ -1,10 +1,10 @@
 <script setup lang="ts">
-// Components
-import ExperienceCard from '~/components/Card/ExperienceCard.vue'
-import SectionHeading from '~/components/Heading/SectionHeading.vue'
-
 // Types
 import type { Experience } from '~/libs/App/types/sanity.types'
+// Components
+import ExperienceCard from '~/components/Card/ExperienceCard.vue'
+
+import SectionHeading from '~/components/Heading/SectionHeading.vue'
 
 // Utils
 const { locale } = useI18n()
@@ -15,7 +15,7 @@ const query = computed(() => groq`*[_type == "experience" && language == $lang] 
 // Data fetching
 const { data: experienceItemsData } = await useAsyncData(
   `experience-${locale.value}`,
-  () => useSanityQuery<Experience[]>(query.value, { lang: locale.value }).then(res => res.data.value)
+  () => useSanityQuery<Experience[]>(query.value, { lang: locale.value }).then(res => res.data.value),
 )
 </script>
 

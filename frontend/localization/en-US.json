@@ -8,10 +8,10 @@
     "pages": {
       "home": {
         "title": "Ahmed Al-Doori - Full Stack .NET/NuxtJs Developer & Software Engineer",
-        "description": "Experienced Full Stack Software Engineer specializing in .NET Core, NuxtJS, ReactJS, and Azure DevOps. 3+ years building scalable web applications and transitioning into cybersecurity. Available for freelance projects.",
+        "description": "Experienced Full Stack Software Engineer specializing in .NET Core, NuxtJS, ReactJS, and Azure DevOps. 3+ years building scalable web applications that deliver business value. Available for freelance projects.",
         "keywords": "",
-        "ogTitle": "Ahmed Al-Doori - Full Stack .NET Developer & Cybersecurity Enthusiast",
-        "ogDescription": "Experienced Software Engineer with 3+ years in full stack development. Specializing in .NET, NuxtJS, and transitioning into Pentesting/Red teaming."
+        "ogTitle": "Ahmed Al-Doori - Full Stack .NET Developer & Software Engineer",
+        "ogDescription": "Experienced Software Engineer with 3+ years in full stack development. Specializing in .NET, NuxtJS, and delivering scalable web solutions."
       },
       "projects": {
         "title": "Software Development Projects - .NET, NuxtJS & Full Stack Solutions",
@@ -56,7 +56,11 @@
       "software": "Software",
       "engineer": "Engineer"
     },
-    "bio": "Full-stack software engineer transitioning into cybersecurity, focused on DevSecOps, Cloud Security, Application Security, and penetration testing—building secure systems by understanding how they break.",
+    "bio": "I help businesses build secure, scalable web applications that drive results. Specializing in full-stack development with .NET and modern JavaScript frameworks, I deliver solutions that are both robust and user-friendly.",
+    "cta": {
+      "primary": "View My Work",
+      "secondary": "Get In Touch"
+    },
     "stats": {
       "yearsOfExp": {
         "number": "3+",

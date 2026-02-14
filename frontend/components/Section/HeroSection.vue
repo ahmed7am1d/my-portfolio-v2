@@ -19,6 +19,22 @@ import AnimatedNumber from '../AnimatedNumber.vue'
       <p class="hero-info__about">
         {{ $t('heroSection.bio') }}
       </p>
+
+      <!-- CTA Buttons -->
+      <div class="hero-info__cta">
+        <NuxtLink
+          to="/projects"
+          class="btn btn-primary"
+        >
+          {{ $t('heroSection.cta.primary') }}
+        </NuxtLink>
+        <a
+          href="mailto:ahmed7am1d@gmail.com"
+          class="btn btn-secondary"
+        >
+          {{ $t('heroSection.cta.secondary') }}
+        </a>
+      </div>
     </div>
 
     <!-- Stats -->
@@ -66,6 +82,26 @@ section {
 
     &__about {
       @apply max-w-md text-gray text-lg items-center lg:items-start text-center lg:text-start;
+    }
+
+    &__cta {
+      @apply flex flex-row gap-4 mt-6 flex-wrap justify-center lg:justify-start;
+
+      .btn {
+        @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 text-center;
+        @apply hover:scale-105 active:scale-95;
+      }
+
+      .btn-primary {
+        @apply bg-primary text-white;
+        @apply hover:bg-opacity-90;
+      }
+
+      .btn-secondary {
+        @apply border-2 border-primary text-primary bg-transparent;
+        @apply hover:bg-primary hover:text-white;
+        @apply dark:text-primary dark:border-primary;
+      }
     }
   }
 

@@ -1,12 +1,12 @@
 <script setup lang="ts">
-// Components
-import ProjectCard from '~/components/Card/ProjectCard.vue'
-import SectionHeading from '~/components/Heading/SectionHeading.vue'
-
 // Types
 import type { Project } from '~/libs/App/types/sanity.types'
+// Components
+import ProjectCard from '~/components/Card/ProjectCard.vue'
 
-// Utils 
+import SectionHeading from '~/components/Heading/SectionHeading.vue'
+
+// Utils
 const { locale } = useI18n()
 
 // Layout
@@ -15,7 +15,7 @@ const query = computed(() => groq`*[_type == "project" && language == $lang]`)
 // Data fetching
 const { data: projectItemsData } = await useAsyncData(
   `projects-${locale.value}`,
-  () => useSanityQuery<Project[]>(query.value, { lang: locale.value }).then(res => res.data.value)
+  () => useSanityQuery<Project[]>(query.value, { lang: locale.value }).then(res => res.data.value),
 )
 </script>
 
